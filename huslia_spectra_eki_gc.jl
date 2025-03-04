@@ -11,7 +11,7 @@ rmprocs(workers())
 if length(workers()) == 1
     #curry 96
     #tofu 48
-    addprocs(96; exeflags = "--project")  # Adjust process count as needed
+    addprocs(192; exeflags = "--project")  # Adjust process count as needed
 end
 
 # Load dependencies on all workers
