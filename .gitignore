@@ -1,2 +1,5 @@
 # Ignore all NetCDF files
 *.nc
+
+# If you want to ignore NetCDF backup files as well
+*.nc~
