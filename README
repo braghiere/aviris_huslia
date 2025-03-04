@@ -1,0 +1,20 @@
+1) to run in the background: screen 
+
+1.1) if I want to go back to the main scree: ctrl+a+d
+
+1.2) to kill: exit
+
+2) to the background screen: screen -r number
+
+#
+# cd path_of_project
+# julia --project
+#     using Pkg
+#     Pkg.initiate(.)
+#     Pkg.instantiate()
+#     include("shift_spectra.jl");
+#     fit_shift_traits!(inputdata, outputresult);
+#
+
+
+ 
