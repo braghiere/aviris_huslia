@@ -1,5 +1,5 @@
 using NetcdfIO: append_nc!, create_nc!, read_nc
-using Distributed: @everywhere, addprocs, pmap, workers
+using Distributed: @everywhere, addprocs, pmap, workers, rmprocs
 using ProgressMeter: @showprogress
 using Base.GC
 using Printf
@@ -88,6 +88,6 @@ function fit_shift_traits!(datafile::String, ncresult::String)
 end
 
 # Run the function
-datafile = "merged_output_subset.nc"
-outputfile = "test_output_rmse.nc"
+datafile = "data/merged_output_subset.nc"
+outputfile = "data/test_output_rmse.nc"
 fit_shift_traits!(datafile, outputfile)

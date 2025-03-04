@@ -237,8 +237,8 @@ function fit_shift_traits_grid!(datafile::String)
     lon_grid = reshape([lon[j] for i in px_range_y, j in px_range_x], lat_size, lon_size)
 
     # Define filenames
-    ncresult_mean = "fitted_traits_eki_mean.nc"
-    ncresult_std  = "fitted_traits_eki_std.nc"
+    ncresult_mean = "data/fitted_traits_eki_mean.nc"
+    ncresult_std  = "data/fitted_traits_eki_std.nc"
 
     # Save MEAN values
     println("📝 Creating NetCDF file for MEANS: $ncresult_mean")
@@ -279,6 +279,6 @@ function fit_shift_traits_grid!(datafile::String)
 end
 
 # Run the function
-datafile = "merged_output_subset.nc"
+datafile = "data/merged_output_subset.nc"
 fit_shift_traits_grid!(datafile)
 
