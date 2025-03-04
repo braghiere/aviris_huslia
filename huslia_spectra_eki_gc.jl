@@ -9,7 +9,9 @@ using LinearAlgebra
 # Ensure multiple processes are available for parallel computation
 rmprocs(workers())
 if length(workers()) == 1
-    addprocs(48; exeflags = "--project")  # Adjust process count as needed
+    #curry 96
+    #tofu 48
+    addprocs(96; exeflags = "--project")  # Adjust process count as needed
 end
 
 # Load dependencies on all workers
@@ -185,8 +187,8 @@ end
 function fit_shift_traits_grid!(datafile::String)
     wavelengths, reflectance, lat, lon = read_validate_data(datafile)
 
-    px_range_x = 50:60
-    px_range_y = 50:60
+    px_range_x = 1:101
+    px_range_y = 1:101
 
     tasks = []
     for i in px_range_x, j in px_range_y

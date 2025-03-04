@@ -39,8 +39,10 @@ function fit_shift_traits!(datafile::String, ncresult::String)
     # Ensure reflectance values are within the valid range
     reflectance = clamp.(reflectance, 0.0, 1.0)
 
-    px_range_i = 50:60
-    px_range_j = 50:60
+    #px_range_i = 50:60
+    #px_range_j = 50:60
+    px_range_i = 1:101
+    px_range_j = 1:101
 
     # Prepare parameters for spectral fitting
     params = []
