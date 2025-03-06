@@ -53,8 +53,12 @@ function fit_shift_traits!(datafile::String, ncresult::String)
 
     reflectance = clamp.(reflectance, 0.0, 1.0)
 
-    px_range_i = 1:101
-    px_range_j = 1:101
+    #dimensions:
+	#lon = 660 ;
+	#lat = 5890 ;
+
+    px_range_i = 1:660
+    px_range_j = 1:5890
 
     # Map global indices to local indices
     px_i_to_local = Dict(px => i for (i, px) in enumerate(px_range_i))
@@ -104,6 +108,8 @@ function fit_shift_traits!(datafile::String, ncresult::String)
 end
 
 # Run the function
-datafile = "data/merged_output_subset.nc"
-outputfile = "data/test_output_rmse_ndvi.nc"
+#datafile = "data/merged_output_subset.nc"
+#outputfile = "data/test_output_rmse_ndvi.nc"
+datafile = "data/merged_output.nc"
+outputfile = "data/output_rmse_ndvi.nc"
 fit_shift_traits!(datafile, outputfile)
