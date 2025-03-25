@@ -1,0 +1,1193 @@
+┌ Info: 🟢 Logger initialized
+│   logfile = simulation_debug.log
+└ @ Main /net/fluo/data3/data/FluoData1/students/renato/aviris_huslia/debug_huslia_gpp.jl:29
+┌ Debug: Loading object cache file /home/renatob/.julia/compiled/v1.11/MacroTools/38lnR_P4NcD.so for MacroTools [1914dd2f-81c6-5fcd-8719-6d5c9610ff09]
+└ @ Base loading.jl:1244
+┌ Debug: Loading object cache file /home/renatob/.julia/compiled/v1.11/JLD2/O1EyT_P4NcD.so for JLD2 [033835bb-8acc-5ee8-8aae-3f567f8a3819]
+└ @ Base loading.jl:1244
+┌ Info: ✅ Emerald configuration ready
+│   saving_keys = ["K_PLANT", "ΦFΦP", "ΣSIF_LEAF", "MOD_T_MMM", "GPP", "ET_VEG", "ΣSIF_CHL", "SIF771", "NIRvI", "K_ROOT_STEM", "CNPP", "MOD_T_SOIL", "PAR", "EVI", "MOD_P_MMM", "MOD_SWC", "NIRvR", "ΣSIF", "SIF740", "MOD_T_LEAF", "BETA", "NDVI", "SIF757", "PPAR", "SIF683", "MOD_P_LEAF"]
+└ @ Main /net/fluo/data3/data/FluoData1/students/renato/aviris_huslia/debug_huslia_gpp.jl:48
+┌ Info: 📦 Loading trait data
+│   file = data/batches/batch_1_1.nc
+└ @ Main /net/fluo/data3/data/FluoData1/students/renato/aviris_huslia/debug_huslia_gpp.jl:56
+┌ Debug: nc_open data/batches/batch_1_1.nc with mode 0
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:49
+┌ Debug: parent variable
+│   _parentname = 
+└ @ CommonDataModel /home/renatob/.julia/packages/CommonDataModel/vTYnt/src/cfvariable.jl:110
+┌ Debug: closing 65536
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:895
+┌ Debug: end close 65536
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:897
+┌ Debug: nc_open data/batches/batch_1_1.nc with mode 0
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:49
+┌ Debug: parent variable
+│   _parentname = 
+└ @ CommonDataModel /home/renatob/.julia/packages/CommonDataModel/vTYnt/src/cfvariable.jl:110
+┌ Debug: closing 65536
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:895
+┌ Debug: end close 65536
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:897
+┌ Debug: nc_open data/batches/batch_1_1.nc with mode 0
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:49
+┌ Debug: parent variable
+│   _parentname = 
+└ @ CommonDataModel /home/renatob/.julia/packages/CommonDataModel/vTYnt/src/cfvariable.jl:110
+┌ Debug: closing 65536
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:895
+┌ Debug: end close 65536
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:897
+┌ Debug: nc_open data/batches/batch_1_1.nc with mode 0
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:49
+┌ Debug: parent variable
+│   _parentname = 
+└ @ CommonDataModel /home/renatob/.julia/packages/CommonDataModel/vTYnt/src/cfvariable.jl:110
+┌ Debug: closing 65536
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:895
+┌ Debug: end close 65536
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:897
+┌ Debug: nc_open data/batches/batch_1_1.nc with mode 0
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:49
+┌ Debug: parent variable
+│   _parentname = 
+└ @ CommonDataModel /home/renatob/.julia/packages/CommonDataModel/vTYnt/src/cfvariable.jl:110
+┌ Debug: closing 65536
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:895
+┌ Debug: end close 65536
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:897
+┌ Info: ✅ Trait data loaded
+│   chls_size = (50, 50)
+│   lais_size = (50, 50)
+│   vcms_size = (50, 50)
+└ @ Main /net/fluo/data3/data/FluoData1/students/renato/aviris_huslia/debug_huslia_gpp.jl:65
+┌ Info: ✅ Central 4 pixels extracted
+│   n_pixels = 4
+└ @ Main /net/fluo/data3/data/FluoData1/students/renato/aviris_huslia/debug_huslia_gpp.jl:84
+┌ Debug: nc_open /home/renatob/GriddingMachine//published/8982c2361022359a3a954d9f35b65d48f6b9f39b/ELEV_4X_1Y_V1.nc with mode 0
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:49
+┌ Debug: parent variable
+│   _parentname = 
+└ @ CommonDataModel /home/renatob/.julia/packages/CommonDataModel/vTYnt/src/cfvariable.jl:110
+┌ Debug: closing 65536
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:895
+┌ Debug: end close 65536
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:897
+┌ Debug: nc_open /home/renatob/GriddingMachine//published/8982c2361022359a3a954d9f35b65d48f6b9f39b/ELEV_4X_1Y_V1.nc with mode 0
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:49
+┌ Debug: parent variable
+│   _parentname = 
+└ @ CommonDataModel /home/renatob/.julia/packages/CommonDataModel/vTYnt/src/cfvariable.jl:110
+┌ Debug: closing 65536
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:895
+┌ Debug: end close 65536
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:897
+┌ Debug: nc_open /home/renatob/GriddingMachine//published/8982c2361022359a3a954d9f35b65d48f6b9f39b/ELEV_4X_1Y_V1.nc with mode 0
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:49
+┌ Debug: parent variable
+│   _parentname = 
+└ @ CommonDataModel /home/renatob/.julia/packages/CommonDataModel/vTYnt/src/cfvariable.jl:110
+┌ Debug: nc_get_var1
+│   indexp = [622, 94]
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:566
+┌ Debug: closing 65536
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:895
+┌ Debug: end close 65536
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:897
+┌ Debug: nc_open /home/renatob/GriddingMachine//published/8982c2361022359a3a954d9f35b65d48f6b9f39b/ELEV_4X_1Y_V1.nc with mode 0
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:49
+┌ Debug: parent variable
+│   _parentname = 
+└ @ CommonDataModel /home/renatob/.julia/packages/CommonDataModel/vTYnt/src/cfvariable.jl:110
+┌ Debug: closing 65536
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:895
+┌ Debug: end close 65536
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:897
+┌ Debug: nc_open /home/renatob/GriddingMachine//published/8982c2361022359a3a954d9f35b65d48f6b9f39b/ELEV_4X_1Y_V1.nc with mode 0
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:49
+┌ Debug: parent variable
+│   _parentname = 
+└ @ CommonDataModel /home/renatob/.julia/packages/CommonDataModel/vTYnt/src/cfvariable.jl:110
+┌ Debug: nc_get_var1
+│   indexp = [622, 94]
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:566
+┌ Debug: closing 65536
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:895
+┌ Debug: end close 65536
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:897
+┌ Debug: nc_open /home/renatob/GriddingMachine//published/5662e9e197e74055f9582b9ff35a9612e2a15ea7/LAI_MODIS_2X_8D_2020_V1.nc with mode 0
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:49
+┌ Debug: parent variable
+│   _parentname = 
+└ @ CommonDataModel /home/renatob/.julia/packages/CommonDataModel/vTYnt/src/cfvariable.jl:110
+┌ Debug: closing 65536
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:895
+┌ Debug: end close 65536
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:897
+┌ Debug: nc_open /home/renatob/GriddingMachine//published/5662e9e197e74055f9582b9ff35a9612e2a15ea7/LAI_MODIS_2X_8D_2020_V1.nc with mode 0
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:49
+┌ Debug: parent variable
+│   _parentname = 
+└ @ CommonDataModel /home/renatob/.julia/packages/CommonDataModel/vTYnt/src/cfvariable.jl:110
+┌ Debug: closing 65536
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:895
+┌ Debug: end close 65536
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:897
+┌ Debug: nc_open /home/renatob/GriddingMachine//published/5662e9e197e74055f9582b9ff35a9612e2a15ea7/LAI_MODIS_2X_8D_2020_V1.nc with mode 0
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:49
+┌ Debug: parent variable
+│   _parentname = 
+└ @ CommonDataModel /home/renatob/.julia/packages/CommonDataModel/vTYnt/src/cfvariable.jl:110
+┌ Debug: nc_get_vars!: [0, 311, 47],[46, 1, 1],[1, 1, 1]
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:753
+┌ Debug: closing 65536
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:895
+┌ Debug: end close 65536
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:897
+┌ Debug: nc_open /home/renatob/GriddingMachine//published/5662e9e197e74055f9582b9ff35a9612e2a15ea7/LAI_MODIS_2X_8D_2020_V1.nc with mode 0
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:49
+┌ Debug: parent variable
+│   _parentname = 
+└ @ CommonDataModel /home/renatob/.julia/packages/CommonDataModel/vTYnt/src/cfvariable.jl:110
+┌ Debug: closing 65536
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:895
+┌ Debug: end close 65536
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:897
+┌ Debug: nc_open /home/renatob/GriddingMachine//published/5662e9e197e74055f9582b9ff35a9612e2a15ea7/LAI_MODIS_2X_8D_2020_V1.nc with mode 0
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:49
+┌ Debug: parent variable
+│   _parentname = 
+└ @ CommonDataModel /home/renatob/.julia/packages/CommonDataModel/vTYnt/src/cfvariable.jl:110
+┌ Debug: nc_get_vars!: [0, 311, 47],[46, 1, 1],[1, 1, 1]
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:753
+┌ Debug: closing 65536
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:895
+┌ Debug: end close 65536
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:897
+┌ Debug: nc_open /home/renatob/GriddingMachine//published/29cd434229d72705e9fa434c3a25e9889aba69e5/SC_2X_1Y_V1.nc with mode 0
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:49
+┌ Debug: parent variable
+│   _parentname = 
+└ @ CommonDataModel /home/renatob/.julia/packages/CommonDataModel/vTYnt/src/cfvariable.jl:110
+┌ Debug: closing 65536
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:895
+┌ Debug: end close 65536
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:897
+┌ Debug: nc_open /home/renatob/GriddingMachine//published/29cd434229d72705e9fa434c3a25e9889aba69e5/SC_2X_1Y_V1.nc with mode 0
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:49
+┌ Debug: parent variable
+│   _parentname = 
+└ @ CommonDataModel /home/renatob/.julia/packages/CommonDataModel/vTYnt/src/cfvariable.jl:110
+┌ Debug: closing 65536
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:895
+┌ Debug: end close 65536
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:897
+┌ Debug: nc_open /home/renatob/GriddingMachine//published/29cd434229d72705e9fa434c3a25e9889aba69e5/SC_2X_1Y_V1.nc with mode 0
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:49
+┌ Debug: parent variable
+│   _parentname = 
+└ @ CommonDataModel /home/renatob/.julia/packages/CommonDataModel/vTYnt/src/cfvariable.jl:110
+┌ Debug: nc_get_var1
+│   indexp = [311, 47]
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:566
+┌ Debug: closing 65536
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:895
+┌ Debug: end close 65536
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:897
+┌ Debug: nc_open /home/renatob/GriddingMachine//published/29cd434229d72705e9fa434c3a25e9889aba69e5/SC_2X_1Y_V1.nc with mode 0
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:49
+┌ Debug: parent variable
+│   _parentname = 
+└ @ CommonDataModel /home/renatob/.julia/packages/CommonDataModel/vTYnt/src/cfvariable.jl:110
+┌ Debug: closing 65536
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:895
+┌ Debug: end close 65536
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:897
+┌ Debug: nc_open /home/renatob/GriddingMachine//published/29cd434229d72705e9fa434c3a25e9889aba69e5/SC_2X_1Y_V1.nc with mode 0
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:49
+┌ Debug: parent variable
+│   _parentname = 
+└ @ CommonDataModel /home/renatob/.julia/packages/CommonDataModel/vTYnt/src/cfvariable.jl:110
+┌ Debug: nc_get_var1
+│   indexp = [311, 47]
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:566
+┌ Debug: closing 65536
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:895
+┌ Debug: end close 65536
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:897
+┌ Debug: nc_open /home/renatob/GriddingMachine//published/137a141ba5dba7db1e9922efd26487fb77d810f7/SOIL_VGN_12X_1Y_V1.nc with mode 0
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:49
+┌ Debug: parent variable
+│   _parentname = 
+└ @ CommonDataModel /home/renatob/.julia/packages/CommonDataModel/vTYnt/src/cfvariable.jl:110
+┌ Debug: closing 65536
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:895
+┌ Debug: end close 65536
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:897
+┌ Debug: nc_open /home/renatob/GriddingMachine//published/137a141ba5dba7db1e9922efd26487fb77d810f7/SOIL_VGN_12X_1Y_V1.nc with mode 0
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:49
+┌ Debug: parent variable
+│   _parentname = 
+└ @ CommonDataModel /home/renatob/.julia/packages/CommonDataModel/vTYnt/src/cfvariable.jl:110
+┌ Debug: closing 65536
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:895
+┌ Debug: end close 65536
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:897
+┌ Debug: nc_open /home/renatob/GriddingMachine//published/137a141ba5dba7db1e9922efd26487fb77d810f7/SOIL_VGN_12X_1Y_V1.nc with mode 0
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:49
+┌ Debug: parent variable
+│   _parentname = 
+└ @ CommonDataModel /home/renatob/.julia/packages/CommonDataModel/vTYnt/src/cfvariable.jl:110
+┌ Debug: nc_get_vars!: [0, 1868, 283],[4, 1, 1],[1, 1, 1]
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:753
+┌ Debug: closing 65536
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:895
+┌ Debug: end close 65536
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:897
+┌ Debug: nc_open /home/renatob/GriddingMachine//published/137a141ba5dba7db1e9922efd26487fb77d810f7/SOIL_VGN_12X_1Y_V1.nc with mode 0
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:49
+┌ Debug: parent variable
+│   _parentname = 
+└ @ CommonDataModel /home/renatob/.julia/packages/CommonDataModel/vTYnt/src/cfvariable.jl:110
+┌ Debug: closing 65536
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:895
+┌ Debug: end close 65536
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:897
+┌ Debug: nc_open /home/renatob/GriddingMachine//published/137a141ba5dba7db1e9922efd26487fb77d810f7/SOIL_VGN_12X_1Y_V1.nc with mode 0
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:49
+┌ Debug: parent variable
+│   _parentname = 
+└ @ CommonDataModel /home/renatob/.julia/packages/CommonDataModel/vTYnt/src/cfvariable.jl:110
+┌ Debug: nc_get_vars!: [0, 1868, 283],[4, 1, 1],[1, 1, 1]
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:753
+┌ Debug: closing 65536
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:895
+┌ Debug: end close 65536
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:897
+┌ Debug: nc_open /home/renatob/GriddingMachine//published/137a141ba5dba7db1e9922efd26487fb77d810f7/SOIL_VGN_12X_1Y_V1.nc with mode 0
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:49
+┌ Debug: parent variable
+│   _parentname = 
+└ @ CommonDataModel /home/renatob/.julia/packages/CommonDataModel/vTYnt/src/cfvariable.jl:110
+┌ Debug: closing 65536
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:895
+┌ Debug: end close 65536
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:897
+┌ Debug: nc_open /home/renatob/GriddingMachine//published/137a141ba5dba7db1e9922efd26487fb77d810f7/SOIL_VGN_12X_1Y_V1.nc with mode 0
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:49
+┌ Debug: parent variable
+│   _parentname = 
+└ @ CommonDataModel /home/renatob/.julia/packages/CommonDataModel/vTYnt/src/cfvariable.jl:110
+┌ Debug: closing 65536
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:895
+┌ Debug: end close 65536
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:897
+┌ Debug: nc_open /home/renatob/GriddingMachine//published/137a141ba5dba7db1e9922efd26487fb77d810f7/SOIL_VGN_12X_1Y_V1.nc with mode 0
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:49
+┌ Debug: parent variable
+│   _parentname = 
+└ @ CommonDataModel /home/renatob/.julia/packages/CommonDataModel/vTYnt/src/cfvariable.jl:110
+┌ Debug: nc_get_vars!: [0, 1868, 283],[4, 1, 1],[1, 1, 1]
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:753
+┌ Debug: closing 65536
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:895
+┌ Debug: end close 65536
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:897
+┌ Debug: nc_open /home/renatob/GriddingMachine//published/137a141ba5dba7db1e9922efd26487fb77d810f7/SOIL_VGN_12X_1Y_V1.nc with mode 0
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:49
+┌ Debug: parent variable
+│   _parentname = 
+└ @ CommonDataModel /home/renatob/.julia/packages/CommonDataModel/vTYnt/src/cfvariable.jl:110
+┌ Debug: closing 65536
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:895
+┌ Debug: end close 65536
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:897
+┌ Debug: nc_open /home/renatob/GriddingMachine//published/137a141ba5dba7db1e9922efd26487fb77d810f7/SOIL_VGN_12X_1Y_V1.nc with mode 0
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:49
+┌ Debug: parent variable
+│   _parentname = 
+└ @ CommonDataModel /home/renatob/.julia/packages/CommonDataModel/vTYnt/src/cfvariable.jl:110
+┌ Debug: nc_get_vars!: [0, 1868, 283],[4, 1, 1],[1, 1, 1]
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:753
+┌ Debug: closing 65536
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:895
+┌ Debug: end close 65536
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:897
+┌ Debug: nc_open /home/renatob/GriddingMachine//published/d5134186bfabf415032c06c8a484597bb235afe0/SOIL_SWCR_12X_1Y_V1.nc with mode 0
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:49
+┌ Debug: parent variable
+│   _parentname = 
+└ @ CommonDataModel /home/renatob/.julia/packages/CommonDataModel/vTYnt/src/cfvariable.jl:110
+┌ Debug: closing 65536
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:895
+┌ Debug: end close 65536
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:897
+┌ Debug: nc_open /home/renatob/GriddingMachine//published/d5134186bfabf415032c06c8a484597bb235afe0/SOIL_SWCR_12X_1Y_V1.nc with mode 0
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:49
+┌ Debug: parent variable
+│   _parentname = 
+└ @ CommonDataModel /home/renatob/.julia/packages/CommonDataModel/vTYnt/src/cfvariable.jl:110
+┌ Debug: closing 65536
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:895
+┌ Debug: end close 65536
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:897
+┌ Debug: nc_open /home/renatob/GriddingMachine//published/d5134186bfabf415032c06c8a484597bb235afe0/SOIL_SWCR_12X_1Y_V1.nc with mode 0
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:49
+┌ Debug: parent variable
+│   _parentname = 
+└ @ CommonDataModel /home/renatob/.julia/packages/CommonDataModel/vTYnt/src/cfvariable.jl:110
+┌ Debug: nc_get_vars!: [0, 1868, 283],[4, 1, 1],[1, 1, 1]
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:753
+┌ Debug: closing 65536
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:895
+┌ Debug: end close 65536
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:897
+┌ Debug: nc_open /home/renatob/GriddingMachine//published/d5134186bfabf415032c06c8a484597bb235afe0/SOIL_SWCR_12X_1Y_V1.nc with mode 0
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:49
+┌ Debug: parent variable
+│   _parentname = 
+└ @ CommonDataModel /home/renatob/.julia/packages/CommonDataModel/vTYnt/src/cfvariable.jl:110
+┌ Debug: closing 65536
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:895
+┌ Debug: end close 65536
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:897
+┌ Debug: nc_open /home/renatob/GriddingMachine//published/d5134186bfabf415032c06c8a484597bb235afe0/SOIL_SWCR_12X_1Y_V1.nc with mode 0
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:49
+┌ Debug: parent variable
+│   _parentname = 
+└ @ CommonDataModel /home/renatob/.julia/packages/CommonDataModel/vTYnt/src/cfvariable.jl:110
+┌ Debug: nc_get_vars!: [0, 1868, 283],[4, 1, 1],[1, 1, 1]
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:753
+┌ Debug: closing 65536
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:895
+┌ Debug: end close 65536
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:897
+┌ Debug: nc_open /home/renatob/GriddingMachine//published/035ee92010937a0aee873c88e8e4f3705fcc0d06/SOIL_SWCS_12X_1Y_V1.nc with mode 0
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:49
+┌ Debug: parent variable
+│   _parentname = 
+└ @ CommonDataModel /home/renatob/.julia/packages/CommonDataModel/vTYnt/src/cfvariable.jl:110
+┌ Debug: closing 65536
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:895
+┌ Debug: end close 65536
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:897
+┌ Debug: nc_open /home/renatob/GriddingMachine//published/035ee92010937a0aee873c88e8e4f3705fcc0d06/SOIL_SWCS_12X_1Y_V1.nc with mode 0
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:49
+┌ Debug: parent variable
+│   _parentname = 
+└ @ CommonDataModel /home/renatob/.julia/packages/CommonDataModel/vTYnt/src/cfvariable.jl:110
+┌ Debug: closing 65536
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:895
+┌ Debug: end close 65536
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:897
+┌ Debug: nc_open /home/renatob/GriddingMachine//published/035ee92010937a0aee873c88e8e4f3705fcc0d06/SOIL_SWCS_12X_1Y_V1.nc with mode 0
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:49
+┌ Debug: parent variable
+│   _parentname = 
+└ @ CommonDataModel /home/renatob/.julia/packages/CommonDataModel/vTYnt/src/cfvariable.jl:110
+┌ Debug: nc_get_vars!: [0, 1868, 283],[4, 1, 1],[1, 1, 1]
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:753
+┌ Debug: closing 65536
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:895
+┌ Debug: end close 65536
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:897
+┌ Debug: nc_open /home/renatob/GriddingMachine//published/035ee92010937a0aee873c88e8e4f3705fcc0d06/SOIL_SWCS_12X_1Y_V1.nc with mode 0
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:49
+┌ Debug: parent variable
+│   _parentname = 
+└ @ CommonDataModel /home/renatob/.julia/packages/CommonDataModel/vTYnt/src/cfvariable.jl:110
+┌ Debug: closing 65536
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:895
+┌ Debug: end close 65536
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:897
+┌ Debug: nc_open /home/renatob/GriddingMachine//published/035ee92010937a0aee873c88e8e4f3705fcc0d06/SOIL_SWCS_12X_1Y_V1.nc with mode 0
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:49
+┌ Debug: parent variable
+│   _parentname = 
+└ @ CommonDataModel /home/renatob/.julia/packages/CommonDataModel/vTYnt/src/cfvariable.jl:110
+┌ Debug: nc_get_vars!: [0, 1868, 283],[4, 1, 1],[1, 1, 1]
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:753
+┌ Debug: closing 65536
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:895
+┌ Debug: end close 65536
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:897
+┌ Debug: nc_open /home/renatob/GriddingMachine//published/ce410fa4f36c3abdaa18da6c3afcd78c9656d929/CHL_2X_7D_V1.nc with mode 0
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:49
+┌ Debug: parent variable
+│   _parentname = 
+└ @ CommonDataModel /home/renatob/.julia/packages/CommonDataModel/vTYnt/src/cfvariable.jl:110
+┌ Debug: closing 65536
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:895
+┌ Debug: end close 65536
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:897
+┌ Debug: nc_open /home/renatob/GriddingMachine//published/ce410fa4f36c3abdaa18da6c3afcd78c9656d929/CHL_2X_7D_V1.nc with mode 0
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:49
+┌ Debug: parent variable
+│   _parentname = 
+└ @ CommonDataModel /home/renatob/.julia/packages/CommonDataModel/vTYnt/src/cfvariable.jl:110
+┌ Debug: closing 65536
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:895
+┌ Debug: end close 65536
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:897
+┌ Debug: nc_open /home/renatob/GriddingMachine//published/ce410fa4f36c3abdaa18da6c3afcd78c9656d929/CHL_2X_7D_V1.nc with mode 0
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:49
+┌ Debug: parent variable
+│   _parentname = 
+└ @ CommonDataModel /home/renatob/.julia/packages/CommonDataModel/vTYnt/src/cfvariable.jl:110
+┌ Debug: nc_get_vars!: [0, 311, 47],[52, 1, 1],[1, 1, 1]
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:753
+┌ Debug: closing 65536
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:895
+┌ Debug: end close 65536
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:897
+┌ Debug: nc_open /home/renatob/GriddingMachine//published/ce410fa4f36c3abdaa18da6c3afcd78c9656d929/CHL_2X_7D_V1.nc with mode 0
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:49
+┌ Debug: parent variable
+│   _parentname = 
+└ @ CommonDataModel /home/renatob/.julia/packages/CommonDataModel/vTYnt/src/cfvariable.jl:110
+┌ Debug: closing 65536
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:895
+┌ Debug: end close 65536
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:897
+┌ Debug: nc_open /home/renatob/GriddingMachine//published/ce410fa4f36c3abdaa18da6c3afcd78c9656d929/CHL_2X_7D_V1.nc with mode 0
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:49
+┌ Debug: parent variable
+│   _parentname = 
+└ @ CommonDataModel /home/renatob/.julia/packages/CommonDataModel/vTYnt/src/cfvariable.jl:110
+┌ Debug: nc_get_vars!: [0, 311, 47],[52, 1, 1],[1, 1, 1]
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:753
+┌ Debug: closing 65536
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:895
+┌ Debug: end close 65536
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:897
+┌ Debug: nc_open /home/renatob/GriddingMachine//published/0324e3106e8e2ef1ba3b13c895b87cf00ec00660/CI_2X_1M_V3.nc with mode 0
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:49
+┌ Debug: parent variable
+│   _parentname = 
+└ @ CommonDataModel /home/renatob/.julia/packages/CommonDataModel/vTYnt/src/cfvariable.jl:110
+┌ Debug: closing 65536
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:895
+┌ Debug: end close 65536
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:897
+┌ Debug: nc_open /home/renatob/GriddingMachine//published/0324e3106e8e2ef1ba3b13c895b87cf00ec00660/CI_2X_1M_V3.nc with mode 0
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:49
+┌ Debug: parent variable
+│   _parentname = 
+└ @ CommonDataModel /home/renatob/.julia/packages/CommonDataModel/vTYnt/src/cfvariable.jl:110
+┌ Debug: closing 65536
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:895
+┌ Debug: end close 65536
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:897
+┌ Debug: nc_open /home/renatob/GriddingMachine//published/0324e3106e8e2ef1ba3b13c895b87cf00ec00660/CI_2X_1M_V3.nc with mode 0
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:49
+┌ Debug: parent variable
+│   _parentname = 
+└ @ CommonDataModel /home/renatob/.julia/packages/CommonDataModel/vTYnt/src/cfvariable.jl:110
+┌ Debug: nc_get_vars!: [0, 311, 47],[12, 1, 1],[1, 1, 1]
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:753
+┌ Debug: closing 65536
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:895
+┌ Debug: end close 65536
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:897
+┌ Debug: nc_open /home/renatob/GriddingMachine//published/0324e3106e8e2ef1ba3b13c895b87cf00ec00660/CI_2X_1M_V3.nc with mode 0
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:49
+┌ Debug: parent variable
+│   _parentname = 
+└ @ CommonDataModel /home/renatob/.julia/packages/CommonDataModel/vTYnt/src/cfvariable.jl:110
+┌ Debug: closing 65536
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:895
+┌ Debug: end close 65536
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:897
+┌ Debug: nc_open /home/renatob/GriddingMachine//published/0324e3106e8e2ef1ba3b13c895b87cf00ec00660/CI_2X_1M_V3.nc with mode 0
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:49
+┌ Debug: parent variable
+│   _parentname = 
+└ @ CommonDataModel /home/renatob/.julia/packages/CommonDataModel/vTYnt/src/cfvariable.jl:110
+┌ Debug: nc_get_vars!: [0, 311, 47],[12, 1, 1],[1, 1, 1]
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:753
+┌ Debug: closing 65536
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:895
+┌ Debug: end close 65536
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:897
+┌ Debug: nc_open /home/renatob/GriddingMachine//published/3c4e1ac76e251a89d2459b7c6b03b9eee7ba15b2/SLA_2X_1Y_V1.nc with mode 0
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:49
+┌ Debug: parent variable
+│   _parentname = 
+└ @ CommonDataModel /home/renatob/.julia/packages/CommonDataModel/vTYnt/src/cfvariable.jl:110
+┌ Debug: closing 65536
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:895
+┌ Debug: end close 65536
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:897
+┌ Debug: nc_open /home/renatob/GriddingMachine//published/3c4e1ac76e251a89d2459b7c6b03b9eee7ba15b2/SLA_2X_1Y_V1.nc with mode 0
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:49
+┌ Debug: parent variable
+│   _parentname = 
+└ @ CommonDataModel /home/renatob/.julia/packages/CommonDataModel/vTYnt/src/cfvariable.jl:110
+┌ Debug: closing 65536
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:895
+┌ Debug: end close 65536
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:897
+┌ Debug: nc_open /home/renatob/GriddingMachine//published/3c4e1ac76e251a89d2459b7c6b03b9eee7ba15b2/SLA_2X_1Y_V1.nc with mode 0
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:49
+┌ Debug: parent variable
+│   _parentname = 
+└ @ CommonDataModel /home/renatob/.julia/packages/CommonDataModel/vTYnt/src/cfvariable.jl:110
+┌ Debug: nc_get_var1
+│   indexp = [311, 47]
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:566
+┌ Debug: closing 65536
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:895
+┌ Debug: end close 65536
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:897
+┌ Debug: nc_open /home/renatob/GriddingMachine//published/3c4e1ac76e251a89d2459b7c6b03b9eee7ba15b2/SLA_2X_1Y_V1.nc with mode 0
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:49
+┌ Debug: parent variable
+│   _parentname = 
+└ @ CommonDataModel /home/renatob/.julia/packages/CommonDataModel/vTYnt/src/cfvariable.jl:110
+┌ Debug: closing 65536
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:895
+┌ Debug: end close 65536
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:897
+┌ Debug: nc_open /home/renatob/GriddingMachine//published/3c4e1ac76e251a89d2459b7c6b03b9eee7ba15b2/SLA_2X_1Y_V1.nc with mode 0
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:49
+┌ Debug: parent variable
+│   _parentname = 
+└ @ CommonDataModel /home/renatob/.julia/packages/CommonDataModel/vTYnt/src/cfvariable.jl:110
+┌ Debug: nc_get_var1
+│   indexp = [311, 47]
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:566
+┌ Debug: closing 65536
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:895
+┌ Debug: end close 65536
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:897
+┌ Debug: nc_open /home/renatob/GriddingMachine//published/ecc92c654ef31d99fdea975629b899686c0bb71b/PFT_2X_1Y_V1.nc with mode 0
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:49
+┌ Debug: parent variable
+│   _parentname = 
+└ @ CommonDataModel /home/renatob/.julia/packages/CommonDataModel/vTYnt/src/cfvariable.jl:110
+┌ Debug: closing 65536
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:895
+┌ Debug: end close 65536
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:897
+┌ Debug: nc_open /home/renatob/GriddingMachine//published/ecc92c654ef31d99fdea975629b899686c0bb71b/PFT_2X_1Y_V1.nc with mode 0
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:49
+┌ Debug: parent variable
+│   _parentname = 
+└ @ CommonDataModel /home/renatob/.julia/packages/CommonDataModel/vTYnt/src/cfvariable.jl:110
+┌ Debug: closing 65536
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:895
+┌ Debug: end close 65536
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:897
+┌ Debug: nc_open /home/renatob/GriddingMachine//published/ecc92c654ef31d99fdea975629b899686c0bb71b/PFT_2X_1Y_V1.nc with mode 0
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:49
+┌ Debug: parent variable
+│   _parentname = 
+└ @ CommonDataModel /home/renatob/.julia/packages/CommonDataModel/vTYnt/src/cfvariable.jl:110
+┌ Debug: nc_get_vars!: [0, 311, 47],[17, 1, 1],[1, 1, 1]
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:753
+┌ Debug: closing 65536
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:895
+┌ Debug: end close 65536
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:897
+┌ Debug: nc_open /home/renatob/GriddingMachine//published/ecc92c654ef31d99fdea975629b899686c0bb71b/PFT_2X_1Y_V1.nc with mode 0
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:49
+┌ Debug: parent variable
+│   _parentname = 
+└ @ CommonDataModel /home/renatob/.julia/packages/CommonDataModel/vTYnt/src/cfvariable.jl:110
+┌ Debug: closing 65536
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:895
+┌ Debug: end close 65536
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:897
+┌ Debug: nc_open /home/renatob/GriddingMachine//published/ecc92c654ef31d99fdea975629b899686c0bb71b/PFT_2X_1Y_V1.nc with mode 0
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:49
+┌ Debug: parent variable
+│   _parentname = 
+└ @ CommonDataModel /home/renatob/.julia/packages/CommonDataModel/vTYnt/src/cfvariable.jl:110
+┌ Debug: nc_get_vars!: [0, 311, 47],[17, 1, 1],[1, 1, 1]
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:753
+┌ Debug: closing 65536
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:895
+┌ Debug: end close 65536
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:897
+┌ Debug: nc_open /home/renatob/GriddingMachine//published/8e82b3b97603651740df68ff493cb497c6f7b486/CH_20X_1Y_V1.nc with mode 0
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:49
+┌ Debug: parent variable
+│   _parentname = 
+└ @ CommonDataModel /home/renatob/.julia/packages/CommonDataModel/vTYnt/src/cfvariable.jl:110
+┌ Debug: closing 65536
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:895
+┌ Debug: end close 65536
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:897
+┌ Debug: nc_open /home/renatob/GriddingMachine//published/8e82b3b97603651740df68ff493cb497c6f7b486/CH_20X_1Y_V1.nc with mode 0
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:49
+┌ Debug: parent variable
+│   _parentname = 
+└ @ CommonDataModel /home/renatob/.julia/packages/CommonDataModel/vTYnt/src/cfvariable.jl:110
+┌ Debug: closing 65536
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:895
+┌ Debug: end close 65536
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:897
+┌ Debug: nc_open /home/renatob/GriddingMachine//published/8e82b3b97603651740df68ff493cb497c6f7b486/CH_20X_1Y_V1.nc with mode 0
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:49
+┌ Debug: parent variable
+│   _parentname = 
+└ @ CommonDataModel /home/renatob/.julia/packages/CommonDataModel/vTYnt/src/cfvariable.jl:110
+┌ Debug: nc_get_var1
+│   indexp = [3113, 471]
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:566
+┌ Debug: closing 65536
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:895
+┌ Debug: end close 65536
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:897
+┌ Debug: nc_open /home/renatob/GriddingMachine//published/8e82b3b97603651740df68ff493cb497c6f7b486/CH_20X_1Y_V1.nc with mode 0
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:49
+┌ Debug: parent variable
+│   _parentname = 
+└ @ CommonDataModel /home/renatob/.julia/packages/CommonDataModel/vTYnt/src/cfvariable.jl:110
+┌ Debug: closing 65536
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:895
+┌ Debug: end close 65536
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:897
+┌ Debug: nc_open /home/renatob/GriddingMachine//published/8e82b3b97603651740df68ff493cb497c6f7b486/CH_20X_1Y_V1.nc with mode 0
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:49
+┌ Debug: parent variable
+│   _parentname = 
+└ @ CommonDataModel /home/renatob/.julia/packages/CommonDataModel/vTYnt/src/cfvariable.jl:110
+┌ Debug: nc_get_var1
+│   indexp = [3113, 471]
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:566
+┌ Debug: closing 65536
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:895
+┌ Debug: end close 65536
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:897
+┌ Debug: nc_open /home/renatob/GriddingMachine//published/f77d012b83e957bbb2c7498f4068e9169025d425/VCMAX_2X_1Y_V2.nc with mode 0
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:49
+┌ Debug: parent variable
+│   _parentname = 
+└ @ CommonDataModel /home/renatob/.julia/packages/CommonDataModel/vTYnt/src/cfvariable.jl:110
+┌ Debug: closing 65536
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:895
+┌ Debug: end close 65536
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:897
+┌ Debug: nc_open /home/renatob/GriddingMachine//published/f77d012b83e957bbb2c7498f4068e9169025d425/VCMAX_2X_1Y_V2.nc with mode 0
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:49
+┌ Debug: parent variable
+│   _parentname = 
+└ @ CommonDataModel /home/renatob/.julia/packages/CommonDataModel/vTYnt/src/cfvariable.jl:110
+┌ Debug: closing 65536
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:895
+┌ Debug: end close 65536
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:897
+┌ Debug: nc_open /home/renatob/GriddingMachine//published/f77d012b83e957bbb2c7498f4068e9169025d425/VCMAX_2X_1Y_V2.nc with mode 0
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:49
+┌ Debug: parent variable
+│   _parentname = 
+└ @ CommonDataModel /home/renatob/.julia/packages/CommonDataModel/vTYnt/src/cfvariable.jl:110
+┌ Debug: nc_get_var1
+│   indexp = [311, 47]
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:566
+┌ Debug: closing 65536
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:895
+┌ Debug: end close 65536
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:897
+┌ Debug: nc_open /home/renatob/GriddingMachine//published/f77d012b83e957bbb2c7498f4068e9169025d425/VCMAX_2X_1Y_V2.nc with mode 0
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:49
+┌ Debug: parent variable
+│   _parentname = 
+└ @ CommonDataModel /home/renatob/.julia/packages/CommonDataModel/vTYnt/src/cfvariable.jl:110
+┌ Debug: closing 65536
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:895
+┌ Debug: end close 65536
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:897
+┌ Debug: nc_open /home/renatob/GriddingMachine//published/f77d012b83e957bbb2c7498f4068e9169025d425/VCMAX_2X_1Y_V2.nc with mode 0
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:49
+┌ Debug: parent variable
+│   _parentname = 
+└ @ CommonDataModel /home/renatob/.julia/packages/CommonDataModel/vTYnt/src/cfvariable.jl:110
+┌ Debug: nc_get_var1
+│   indexp = [311, 47]
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:566
+┌ Debug: closing 65536
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:895
+┌ Debug: end close 65536
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:897
+┌ Debug: nc_open /home/renatob/GriddingMachine//published/8982c2361022359a3a954d9f35b65d48f6b9f39b/ELEV_4X_1Y_V1.nc with mode 0
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:49
+┌ Debug: parent variable
+│   _parentname = 
+└ @ CommonDataModel /home/renatob/.julia/packages/CommonDataModel/vTYnt/src/cfvariable.jl:110
+┌ Debug: closing 65536
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:895
+┌ Debug: end close 65536
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:897
+┌ Debug: nc_open /home/renatob/GriddingMachine//published/8982c2361022359a3a954d9f35b65d48f6b9f39b/ELEV_4X_1Y_V1.nc with mode 0
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:49
+┌ Debug: parent variable
+│   _parentname = 
+└ @ CommonDataModel /home/renatob/.julia/packages/CommonDataModel/vTYnt/src/cfvariable.jl:110
+┌ Debug: closing 65536
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:895
+┌ Debug: end close 65536
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:897
+┌ Debug: nc_open /home/renatob/GriddingMachine//published/8982c2361022359a3a954d9f35b65d48f6b9f39b/ELEV_4X_1Y_V1.nc with mode 0
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:49
+┌ Debug: parent variable
+│   _parentname = 
+└ @ CommonDataModel /home/renatob/.julia/packages/CommonDataModel/vTYnt/src/cfvariable.jl:110
+┌ Debug: nc_get_var1
+│   indexp = [622, 94]
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:566
+┌ Debug: closing 65536
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:895
+┌ Debug: end close 65536
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:897
+┌ Debug: nc_open /home/renatob/GriddingMachine//published/8982c2361022359a3a954d9f35b65d48f6b9f39b/ELEV_4X_1Y_V1.nc with mode 0
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:49
+┌ Debug: parent variable
+│   _parentname = 
+└ @ CommonDataModel /home/renatob/.julia/packages/CommonDataModel/vTYnt/src/cfvariable.jl:110
+┌ Debug: closing 65536
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:895
+┌ Debug: end close 65536
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:897
+┌ Debug: nc_open /home/renatob/GriddingMachine//published/8982c2361022359a3a954d9f35b65d48f6b9f39b/ELEV_4X_1Y_V1.nc with mode 0
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:49
+┌ Debug: parent variable
+│   _parentname = 
+└ @ CommonDataModel /home/renatob/.julia/packages/CommonDataModel/vTYnt/src/cfvariable.jl:110
+┌ Debug: nc_get_var1
+│   indexp = [622, 94]
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:566
+┌ Debug: closing 65536
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:895
+┌ Debug: end close 65536
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:897
+┌ Info: 🛠️  SPAC dictionary setup
+│   dict = Dict{String, Any}("ρ_NIR_C3" => 0.3989361767729196, "CLUMPING" => Float32[0.76325446, 0.7642273, 0.7652001, 0.8068371, 0.80297923, 0.7518322, 0.6731887, 0.7704441, 0.7911519, 0.76033604, 0.76130885, 0.76228166], "FT" => Float64, "LMA" => 0.01, "G1_MEDLYN_C3" => 109.76131389070169, "LON_INDEX" => 24, "LAT_INDEX" => 156, "ELEVATION" => 44.2f0, "LATITUDE" => 65.7, "τ_NIR_C4" => 0.34, "MESSAGE_LEVEL" => 0, "SOIL_α" => Float32[1.1438552, 1.1327248, 1.082152, 1.147478], "soil_color" => 13, "SOIL_N" => Float32[1.1438552, 1.1327248, 1.082152, 1.147478], "LAND_MASK" => 44.2f0, "SOIL_ΘS" => Float32[0.8465286, 0.82613844, 0.7489416, 0.38136104], "ρ_PAR_C3" => 0.09361702243347632, "G1_MEDLYN_C4" => 51.22889809472775, "τ_PAR_C3" => 0.05000000079261496, "PFT_FRACTIONS" => Float32[0.06, 0.0, 0.27, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.46, 0.21, 0.0, 0.0, 0.0, 0.0], "CANOPY_HEIGHT" => 13.0, "ρ_PAR_C4" => 0.11, "CHLOROPHYLL" => Float32[12.555555, 12.555555, 12.555555, 12.555555, 12.555555, 12.555555, 12.555555, 12.555555, 12.666667, 12.666667, 12.666667, 12.666667, 12.555555, 12.666667, 12.666667, 12.777778, 13.111111, 13.666667, 14.777778, 16.444445, 18.11111, 19.555555, 20.777779, 21.444445, 21.777779, 21.88889, 21.666666, 21.333334, 20.777779, 20.333334, 19.88889, 19.333334, 18.666666, 17.88889, 17.0, 16.222221, 15.222222, 14.444445, 13.666667, 13.333333, 12.888889, 12.666667, 12.555555, 12.555555, 12.555555, 12.555555, 12.555555, 12.555555, 12.555555, 12.555555, 12.555555, 12.555555], "RESO_SPACE" => 1, "CO2" => 414.24, "LONGITUDE" => -156.4, "YEAR" => 2022, "SAI" => 0.20843029f0, "SOIL_COLOR" => 17, "VCMAX25" => 55.987373f0, "ρ_NIR_C4" => 0.35, "τ_NIR_C3" => 0.22702127816073764, "τ_PAR_C4" => 0.05, "LAI" => Float32[0.09178364, 0.1102154, 0.23614772, 0.187795, 0.155248, 0.14140736, 0.10881218, 0.06261865, 0.04201093, 0.034514256, 0.032268032, 0.034491014, 0.057256028, 0.11279765, 0.19886033, 0.30890855, 0.48883277, 0.71585375, 0.96920496, 1.2570802, 1.471319, 1.6807759, 1.8310636, 1.9741548, 2.0724373, 2.084303, 2.003072, 1.8749429, 1.6169449, 1.3100727, 1.0487537, 0.8124392, 0.7434588, 0.8275577, 0.95923424, 1.1648693, 1.0556954, 0.81851006, 0.63316846, 0.45776737, 0.290238, 0.12935425, 0.051606156, 0.024868133, 0.026442366, 0.046444904], "SOIL_ΘR" => Float32[0.05313002, 0.073187344, 0.041593567, 0.090637416])
+└ @ Main /net/fluo/data3/data/FluoData1/students/renato/aviris_huslia/debug_huslia_gpp.jl:95
+┌ Info: ✅ SPAC object created
+└ @ Main /net/fluo/data3/data/FluoData1/students/renato/aviris_huslia/debug_huslia_gpp.jl:98
+┌ Debug: nc_open /home/wyujie/DATASERVER/model/CLIMA/LAND/drivers/2022/weather_driver_wd1_2022_156_24_1X.nc with mode 0
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:49
+┌ Debug: closing 65536
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:895
+┌ Debug: end close 65536
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:897
+┌ Debug: nc_open /home/wyujie/DATASERVER/model/CLIMA/LAND/drivers/2022/weather_driver_wd1_2022_156_24_1X.nc with mode 0
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:49
+┌ Debug: parent variable
+│   _parentname = 
+└ @ CommonDataModel /home/renatob/.julia/packages/CommonDataModel/vTYnt/src/cfvariable.jl:110
+┌ Debug: parent variable
+│   _parentname = 
+└ @ CommonDataModel /home/renatob/.julia/packages/CommonDataModel/vTYnt/src/cfvariable.jl:110
+┌ Debug: parent variable
+│   _parentname = 
+└ @ CommonDataModel /home/renatob/.julia/packages/CommonDataModel/vTYnt/src/cfvariable.jl:110
+┌ Debug: parent variable
+│   _parentname = 
+└ @ CommonDataModel /home/renatob/.julia/packages/CommonDataModel/vTYnt/src/cfvariable.jl:110
+┌ Debug: parent variable
+│   _parentname = 
+└ @ CommonDataModel /home/renatob/.julia/packages/CommonDataModel/vTYnt/src/cfvariable.jl:110
+┌ Debug: parent variable
+│   _parentname = 
+└ @ CommonDataModel /home/renatob/.julia/packages/CommonDataModel/vTYnt/src/cfvariable.jl:110
+┌ Debug: parent variable
+│   _parentname = 
+└ @ CommonDataModel /home/renatob/.julia/packages/CommonDataModel/vTYnt/src/cfvariable.jl:110
+┌ Debug: parent variable
+│   _parentname = 
+└ @ CommonDataModel /home/renatob/.julia/packages/CommonDataModel/vTYnt/src/cfvariable.jl:110
+┌ Debug: parent variable
+│   _parentname = 
+└ @ CommonDataModel /home/renatob/.julia/packages/CommonDataModel/vTYnt/src/cfvariable.jl:110
+┌ Debug: parent variable
+│   _parentname = 
+└ @ CommonDataModel /home/renatob/.julia/packages/CommonDataModel/vTYnt/src/cfvariable.jl:110
+┌ Debug: parent variable
+│   _parentname = 
+└ @ CommonDataModel /home/renatob/.julia/packages/CommonDataModel/vTYnt/src/cfvariable.jl:110
+┌ Debug: parent variable
+│   _parentname = 
+└ @ CommonDataModel /home/renatob/.julia/packages/CommonDataModel/vTYnt/src/cfvariable.jl:110
+┌ Debug: parent variable
+│   _parentname = 
+└ @ CommonDataModel /home/renatob/.julia/packages/CommonDataModel/vTYnt/src/cfvariable.jl:110
+┌ Debug: parent variable
+│   _parentname = 
+└ @ CommonDataModel /home/renatob/.julia/packages/CommonDataModel/vTYnt/src/cfvariable.jl:110
+┌ Debug: parent variable
+│   _parentname = 
+└ @ CommonDataModel /home/renatob/.julia/packages/CommonDataModel/vTYnt/src/cfvariable.jl:110
+┌ Debug: parent variable
+│   _parentname = 
+└ @ CommonDataModel /home/renatob/.julia/packages/CommonDataModel/vTYnt/src/cfvariable.jl:110
+┌ Debug: parent variable
+│   _parentname = 
+└ @ CommonDataModel /home/renatob/.julia/packages/CommonDataModel/vTYnt/src/cfvariable.jl:110
+┌ Debug: parent variable
+│   _parentname = 
+└ @ CommonDataModel /home/renatob/.julia/packages/CommonDataModel/vTYnt/src/cfvariable.jl:110
+┌ Debug: parent variable
+│   _parentname = 
+└ @ CommonDataModel /home/renatob/.julia/packages/CommonDataModel/vTYnt/src/cfvariable.jl:110
+┌ Debug: parent variable
+│   _parentname = 
+└ @ CommonDataModel /home/renatob/.julia/packages/CommonDataModel/vTYnt/src/cfvariable.jl:110
+┌ Debug: parent variable
+│   _parentname = 
+└ @ CommonDataModel /home/renatob/.julia/packages/CommonDataModel/vTYnt/src/cfvariable.jl:110
+┌ Debug: parent variable
+│   _parentname = 
+└ @ CommonDataModel /home/renatob/.julia/packages/CommonDataModel/vTYnt/src/cfvariable.jl:110
+┌ Debug: parent variable
+│   _parentname = 
+└ @ CommonDataModel /home/renatob/.julia/packages/CommonDataModel/vTYnt/src/cfvariable.jl:110
+┌ Debug: parent variable
+│   _parentname = 
+└ @ CommonDataModel /home/renatob/.julia/packages/CommonDataModel/vTYnt/src/cfvariable.jl:110
+┌ Debug: parent variable
+│   _parentname = 
+└ @ CommonDataModel /home/renatob/.julia/packages/CommonDataModel/vTYnt/src/cfvariable.jl:110
+┌ Debug: parent variable
+│   _parentname = 
+└ @ CommonDataModel /home/renatob/.julia/packages/CommonDataModel/vTYnt/src/cfvariable.jl:110
+┌ Debug: parent variable
+│   _parentname = 
+└ @ CommonDataModel /home/renatob/.julia/packages/CommonDataModel/vTYnt/src/cfvariable.jl:110
+┌ Debug: parent variable
+│   _parentname = 
+└ @ CommonDataModel /home/renatob/.julia/packages/CommonDataModel/vTYnt/src/cfvariable.jl:110
+┌ Debug: parent variable
+│   _parentname = 
+└ @ CommonDataModel /home/renatob/.julia/packages/CommonDataModel/vTYnt/src/cfvariable.jl:110
+┌ Debug: parent variable
+│   _parentname = 
+└ @ CommonDataModel /home/renatob/.julia/packages/CommonDataModel/vTYnt/src/cfvariable.jl:110
+┌ Debug: parent variable
+│   _parentname = 
+└ @ CommonDataModel /home/renatob/.julia/packages/CommonDataModel/vTYnt/src/cfvariable.jl:110
+┌ Debug: parent variable
+│   _parentname = 
+└ @ CommonDataModel /home/renatob/.julia/packages/CommonDataModel/vTYnt/src/cfvariable.jl:110
+┌ Debug: parent variable
+│   _parentname = 
+└ @ CommonDataModel /home/renatob/.julia/packages/CommonDataModel/vTYnt/src/cfvariable.jl:110
+┌ Debug: parent variable
+│   _parentname = 
+└ @ CommonDataModel /home/renatob/.julia/packages/CommonDataModel/vTYnt/src/cfvariable.jl:110
+┌ Debug: parent variable
+│   _parentname = 
+└ @ CommonDataModel /home/renatob/.julia/packages/CommonDataModel/vTYnt/src/cfvariable.jl:110
+┌ Debug: parent variable
+│   _parentname = 
+└ @ CommonDataModel /home/renatob/.julia/packages/CommonDataModel/vTYnt/src/cfvariable.jl:110
+┌ Debug: parent variable
+│   _parentname = 
+└ @ CommonDataModel /home/renatob/.julia/packages/CommonDataModel/vTYnt/src/cfvariable.jl:110
+┌ Debug: parent variable
+│   _parentname = 
+└ @ CommonDataModel /home/renatob/.julia/packages/CommonDataModel/vTYnt/src/cfvariable.jl:110
+┌ Debug: parent variable
+│   _parentname = 
+└ @ CommonDataModel /home/renatob/.julia/packages/CommonDataModel/vTYnt/src/cfvariable.jl:110
+┌ Debug: parent variable
+│   _parentname = 
+└ @ CommonDataModel /home/renatob/.julia/packages/CommonDataModel/vTYnt/src/cfvariable.jl:110
+┌ Debug: parent variable
+│   _parentname = 
+└ @ CommonDataModel /home/renatob/.julia/packages/CommonDataModel/vTYnt/src/cfvariable.jl:110
+┌ Debug: parent variable
+│   _parentname = 
+└ @ CommonDataModel /home/renatob/.julia/packages/CommonDataModel/vTYnt/src/cfvariable.jl:110
+┌ Debug: parent variable
+│   _parentname = 
+└ @ CommonDataModel /home/renatob/.julia/packages/CommonDataModel/vTYnt/src/cfvariable.jl:110
+┌ Debug: parent variable
+│   _parentname = 
+└ @ CommonDataModel /home/renatob/.julia/packages/CommonDataModel/vTYnt/src/cfvariable.jl:110
+┌ Debug: parent variable
+│   _parentname = 
+└ @ CommonDataModel /home/renatob/.julia/packages/CommonDataModel/vTYnt/src/cfvariable.jl:110
+┌ Debug: parent variable
+│   _parentname = 
+└ @ CommonDataModel /home/renatob/.julia/packages/CommonDataModel/vTYnt/src/cfvariable.jl:110
+┌ Debug: parent variable
+│   _parentname = 
+└ @ CommonDataModel /home/renatob/.julia/packages/CommonDataModel/vTYnt/src/cfvariable.jl:110
+┌ Debug: parent variable
+│   _parentname = 
+└ @ CommonDataModel /home/renatob/.julia/packages/CommonDataModel/vTYnt/src/cfvariable.jl:110
+┌ Debug: parent variable
+│   _parentname = 
+└ @ CommonDataModel /home/renatob/.julia/packages/CommonDataModel/vTYnt/src/cfvariable.jl:110
+┌ Debug: parent variable
+│   _parentname = 
+└ @ CommonDataModel /home/renatob/.julia/packages/CommonDataModel/vTYnt/src/cfvariable.jl:110
+┌ Debug: parent variable
+│   _parentname = 
+└ @ CommonDataModel /home/renatob/.julia/packages/CommonDataModel/vTYnt/src/cfvariable.jl:110
+┌ Debug: parent variable
+│   _parentname = 
+└ @ CommonDataModel /home/renatob/.julia/packages/CommonDataModel/vTYnt/src/cfvariable.jl:110
+┌ Debug: parent variable
+│   _parentname = 
+└ @ CommonDataModel /home/renatob/.julia/packages/CommonDataModel/vTYnt/src/cfvariable.jl:110
+┌ Debug: parent variable
+│   _parentname = 
+└ @ CommonDataModel /home/renatob/.julia/packages/CommonDataModel/vTYnt/src/cfvariable.jl:110
+┌ Debug: parent variable
+│   _parentname = 
+└ @ CommonDataModel /home/renatob/.julia/packages/CommonDataModel/vTYnt/src/cfvariable.jl:110
+┌ Debug: parent variable
+│   _parentname = 
+└ @ CommonDataModel /home/renatob/.julia/packages/CommonDataModel/vTYnt/src/cfvariable.jl:110
+┌ Debug: parent variable
+│   _parentname = 
+└ @ CommonDataModel /home/renatob/.julia/packages/CommonDataModel/vTYnt/src/cfvariable.jl:110
+┌ Debug: parent variable
+│   _parentname = 
+└ @ CommonDataModel /home/renatob/.julia/packages/CommonDataModel/vTYnt/src/cfvariable.jl:110
+┌ Debug: parent variable
+│   _parentname = 
+└ @ CommonDataModel /home/renatob/.julia/packages/CommonDataModel/vTYnt/src/cfvariable.jl:110
+┌ Debug: parent variable
+│   _parentname = 
+└ @ CommonDataModel /home/renatob/.julia/packages/CommonDataModel/vTYnt/src/cfvariable.jl:110
+┌ Debug: parent variable
+│   _parentname = 
+└ @ CommonDataModel /home/renatob/.julia/packages/CommonDataModel/vTYnt/src/cfvariable.jl:110
+┌ Debug: parent variable
+│   _parentname = 
+└ @ CommonDataModel /home/renatob/.julia/packages/CommonDataModel/vTYnt/src/cfvariable.jl:110
+┌ Debug: parent variable
+│   _parentname = 
+└ @ CommonDataModel /home/renatob/.julia/packages/CommonDataModel/vTYnt/src/cfvariable.jl:110
+┌ Debug: parent variable
+│   _parentname = 
+└ @ CommonDataModel /home/renatob/.julia/packages/CommonDataModel/vTYnt/src/cfvariable.jl:110
+┌ Debug: parent variable
+│   _parentname = 
+└ @ CommonDataModel /home/renatob/.julia/packages/CommonDataModel/vTYnt/src/cfvariable.jl:110
+┌ Debug: parent variable
+│   _parentname = 
+└ @ CommonDataModel /home/renatob/.julia/packages/CommonDataModel/vTYnt/src/cfvariable.jl:110
+┌ Debug: parent variable
+│   _parentname = 
+└ @ CommonDataModel /home/renatob/.julia/packages/CommonDataModel/vTYnt/src/cfvariable.jl:110
+┌ Debug: parent variable
+│   _parentname = 
+└ @ CommonDataModel /home/renatob/.julia/packages/CommonDataModel/vTYnt/src/cfvariable.jl:110
+┌ Debug: parent variable
+│   _parentname = 
+└ @ CommonDataModel /home/renatob/.julia/packages/CommonDataModel/vTYnt/src/cfvariable.jl:110
+┌ Debug: parent variable
+│   _parentname = 
+└ @ CommonDataModel /home/renatob/.julia/packages/CommonDataModel/vTYnt/src/cfvariable.jl:110
+┌ Debug: parent variable
+│   _parentname = 
+└ @ CommonDataModel /home/renatob/.julia/packages/CommonDataModel/vTYnt/src/cfvariable.jl:110
+┌ Debug: parent variable
+│   _parentname = 
+└ @ CommonDataModel /home/renatob/.julia/packages/CommonDataModel/vTYnt/src/cfvariable.jl:110
+┌ Debug: parent variable
+│   _parentname = 
+└ @ CommonDataModel /home/renatob/.julia/packages/CommonDataModel/vTYnt/src/cfvariable.jl:110
+┌ Debug: parent variable
+│   _parentname = 
+└ @ CommonDataModel /home/renatob/.julia/packages/CommonDataModel/vTYnt/src/cfvariable.jl:110
+┌ Debug: parent variable
+│   _parentname = 
+└ @ CommonDataModel /home/renatob/.julia/packages/CommonDataModel/vTYnt/src/cfvariable.jl:110
+┌ Debug: parent variable
+│   _parentname = 
+└ @ CommonDataModel /home/renatob/.julia/packages/CommonDataModel/vTYnt/src/cfvariable.jl:110
+┌ Debug: parent variable
+│   _parentname = 
+└ @ CommonDataModel /home/renatob/.julia/packages/CommonDataModel/vTYnt/src/cfvariable.jl:110
+┌ Debug: parent variable
+│   _parentname = 
+└ @ CommonDataModel /home/renatob/.julia/packages/CommonDataModel/vTYnt/src/cfvariable.jl:110
+┌ Debug: parent variable
+│   _parentname = 
+└ @ CommonDataModel /home/renatob/.julia/packages/CommonDataModel/vTYnt/src/cfvariable.jl:110
+┌ Debug: parent variable
+│   _parentname = 
+└ @ CommonDataModel /home/renatob/.julia/packages/CommonDataModel/vTYnt/src/cfvariable.jl:110
+┌ Debug: parent variable
+│   _parentname = 
+└ @ CommonDataModel /home/renatob/.julia/packages/CommonDataModel/vTYnt/src/cfvariable.jl:110
+┌ Debug: parent variable
+│   _parentname = 
+└ @ CommonDataModel /home/renatob/.julia/packages/CommonDataModel/vTYnt/src/cfvariable.jl:110
+┌ Debug: parent variable
+│   _parentname = 
+└ @ CommonDataModel /home/renatob/.julia/packages/CommonDataModel/vTYnt/src/cfvariable.jl:110
+┌ Debug: parent variable
+│   _parentname = 
+└ @ CommonDataModel /home/renatob/.julia/packages/CommonDataModel/vTYnt/src/cfvariable.jl:110
+┌ Debug: closing 65536
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:895
+┌ Debug: end close 65536
+└ @ NetcdfIO.NCDatasets /home/renatob/.julia/packages/NetcdfIO/UoGut/src/ncdatasets/netcdf_c.jl:897
+┌ Info: ✅ Weather driver loaded
+│   timesteps = 8760
+└ @ Main /net/fluo/data3/data/FluoData1/students/renato/aviris_huslia/debug_huslia_gpp.jl:101
+┌ Info: 🗓️  Simulation day
+│   aviris_date = 2022-07-13T19:05:01.000000
+│   doy = 194
+└ @ Main /net/fluo/data3/data/FluoData1/students/renato/aviris_huslia/debug_huslia_gpp.jl:109
+┌ Info: 🚀 Running GPP simulation over Central 4 Huslia pixels...
+└ @ Main /net/fluo/data3/data/FluoData1/students/renato/aviris_huslia/debug_huslia_gpp.jl:254
+┌ Warning: ⚠️ Converted VPD from Pa to kPa
+└ @ Main /net/fluo/data3/data/FluoData1/students/renato/aviris_huslia/debug_huslia_gpp.jl:128
+┌ Debug: ➕ Added input column
+│   column = T_LEAF
+│   default = 298.0
+└ @ Main /net/fluo/data3/data/FluoData1/students/renato/aviris_huslia/debug_huslia_gpp.jl:157
+┌ Debug: ➕ Added input column
+│   column = CLOUD
+│   default = 0.3
+└ @ Main /net/fluo/data3/data/FluoData1/students/renato/aviris_huslia/debug_huslia_gpp.jl:157
+┌ Debug: ➕ Added input column
+│   column = LAI
+│   default = 3.0
+└ @ Main /net/fluo/data3/data/FluoData1/students/renato/aviris_huslia/debug_huslia_gpp.jl:157
+┌ Debug: ➕ Added input column
+│   column = JMAX25
+│   default = 100.0
+└ @ Main /net/fluo/data3/data/FluoData1/students/renato/aviris_huslia/debug_huslia_gpp.jl:157
+┌ Debug: ➕ Added input column
+│   column = RAD_LW
+│   default = 300.0
+└ @ Main /net/fluo/data3/data/FluoData1/students/renato/aviris_huslia/debug_huslia_gpp.jl:157
+┌ Debug: ➕ Added input column
+│   column = CO2
+│   default = 400.0
+└ @ Main /net/fluo/data3/data/FluoData1/students/renato/aviris_huslia/debug_huslia_gpp.jl:157
+┌ Debug: ➕ Added input column
+│   column = VCMAX25
+│   default = 60.0
+└ @ Main /net/fluo/data3/data/FluoData1/students/renato/aviris_huslia/debug_huslia_gpp.jl:157
+┌ Debug: ➕ Added input column
+│   column = T_SOIL_3
+│   default = 286.0
+└ @ Main /net/fluo/data3/data/FluoData1/students/renato/aviris_huslia/debug_huslia_gpp.jl:157
+┌ Debug: ➕ Added input column
+│   column = CI
+│   default = 1.0
+└ @ Main /net/fluo/data3/data/FluoData1/students/renato/aviris_huslia/debug_huslia_gpp.jl:157
+┌ Debug: ➕ Added input column
+│   column = VPD
+│   default = 1.2
+└ @ Main /net/fluo/data3/data/FluoData1/students/renato/aviris_huslia/debug_huslia_gpp.jl:157
+┌ Debug: ➕ Added input column
+│   column = T_SOIL_4
+│   default = 285.0
+└ @ Main /net/fluo/data3/data/FluoData1/students/renato/aviris_huslia/debug_huslia_gpp.jl:157
+┌ Debug: ➕ Added input column
+│   column = CHL
+│   default = 30.0
+└ @ Main /net/fluo/data3/data/FluoData1/students/renato/aviris_huslia/debug_huslia_gpp.jl:157
+┌ Debug: ➕ Added input column
+│   column = WIND
+│   default = 2.0
+└ @ Main /net/fluo/data3/data/FluoData1/students/renato/aviris_huslia/debug_huslia_gpp.jl:157
+┌ Debug: ➕ Added input column
+│   column = T_SOIL_2
+│   default = 287.0
+└ @ Main /net/fluo/data3/data/FluoData1/students/renato/aviris_huslia/debug_huslia_gpp.jl:157
+┌ Debug: ➕ Added input column
+│   column = T_SOIL_1
+│   default = 288.0
+└ @ Main /net/fluo/data3/data/FluoData1/students/renato/aviris_huslia/debug_huslia_gpp.jl:157
+┌ Debug: ➕ Added input column
+│   column = P_ATM
+│   default = 101325.0
+└ @ Main /net/fluo/data3/data/FluoData1/students/renato/aviris_huslia/debug_huslia_gpp.jl:157
+┌ Info: 🌿 Starting pixel simulation
+│   pixel = 1
+│   CHL = 53.30000000000001
+│   LAI = 1.89
+│   VCMAX25 = 73.01000000000002
+└ @ Main /net/fluo/data3/data/FluoData1/students/renato/aviris_huslia/debug_huslia_gpp.jl:221
+┌ Warning: ⚠️ No GPP in output
+│   pixel = 1
+└ @ Main /net/fluo/data3/data/FluoData1/students/renato/aviris_huslia/debug_huslia_gpp.jl:236
+┌ Info: 🌿 Starting pixel simulation
+│   pixel = 2
+│   CHL = 80.0
+│   LAI = 1.555
+│   VCMAX25 = 107.72
+└ @ Main /net/fluo/data3/data/FluoData1/students/renato/aviris_huslia/debug_huslia_gpp.jl:221
+┌ Warning: ⚠️ No GPP in output
+│   pixel = 2
+└ @ Main /net/fluo/data3/data/FluoData1/students/renato/aviris_huslia/debug_huslia_gpp.jl:236
+┌ Info: 🌿 Starting pixel simulation
+│   pixel = 3
+│   CHL = 60.30000000000001
+│   LAI = 2.205000000000001
+│   VCMAX25 = 82.11000000000001
+└ @ Main /net/fluo/data3/data/FluoData1/students/renato/aviris_huslia/debug_huslia_gpp.jl:221
+┌ Warning: ⚠️ No GPP in output
+│   pixel = 3
+└ @ Main /net/fluo/data3/data/FluoData1/students/renato/aviris_huslia/debug_huslia_gpp.jl:236
+┌ Info: 🌿 Starting pixel simulation
+│   pixel = 4
+│   CHL = 80.0
+│   LAI = 1.3350000000000006
+│   VCMAX25 = 107.72
+└ @ Main /net/fluo/data3/data/FluoData1/students/renato/aviris_huslia/debug_huslia_gpp.jl:221
+┌ Warning: ⚠️ No GPP in output
+│   pixel = 4
+└ @ Main /net/fluo/data3/data/FluoData1/students/renato/aviris_huslia/debug_huslia_gpp.jl:236
+┌ Error: 🚨 All GPP values are NaN!
+└ @ Main /net/fluo/data3/data/FluoData1/students/renato/aviris_huslia/debug_huslia_gpp.jl:258
+┌ Info: 💾 Writing GPP results to NetCDF
+│   output_file = debug_huslia_central4_results.nc
+└ @ Main /net/fluo/data3/data/FluoData1/students/renato/aviris_huslia/debug_huslia_gpp.jl:265
+┌ Debug: ncmode: 0
+└ @ NCDatasets /home/renatob/.julia/packages/NCDatasets/PkTUf/src/dataset.jl:207
+┌ Debug: maskingvalue
+│   maskingvalue = missing
+└ @ NCDatasets /home/renatob/.julia/packages/NCDatasets/PkTUf/src/dataset.jl:78
+┌ Debug: parent variable
+│   _parentname = 
+└ @ CommonDataModel /home/renatob/.julia/packages/CommonDataModel/vTYnt/src/cfvariable.jl:110
+┌ Debug: parent variable
+│   _parentname = 
+└ @ CommonDataModel /home/renatob/.julia/packages/CommonDataModel/vTYnt/src/cfvariable.jl:110
+┌ Debug: parent variable
+│   _parentname = 
+└ @ CommonDataModel /home/renatob/.julia/packages/CommonDataModel/vTYnt/src/cfvariable.jl:110
+┌ Debug: parent variable
+│   _parentname = 
+└ @ CommonDataModel /home/renatob/.julia/packages/CommonDataModel/vTYnt/src/cfvariable.jl:110
+┌ Debug: parent variable
+│   _parentname = 
+└ @ CommonDataModel /home/renatob/.julia/packages/CommonDataModel/vTYnt/src/cfvariable.jl:110
+┌ Debug: parent variable
+│   _parentname = 
+└ @ CommonDataModel /home/renatob/.julia/packages/CommonDataModel/vTYnt/src/cfvariable.jl:110
+┌ Debug: nc_put_vars: [0],[2],[1]
+└ @ NCDatasets /home/renatob/.julia/packages/NCDatasets/PkTUf/src/netcdf_c.jl:987
+┌ Debug: shape (2,)
+└ @ NCDatasets /home/renatob/.julia/packages/NCDatasets/PkTUf/src/netcdf_c.jl:988
+┌ Debug: nc_put_vars: [0],[2],[1]
+└ @ NCDatasets /home/renatob/.julia/packages/NCDatasets/PkTUf/src/netcdf_c.jl:987
+┌ Debug: shape (2,)
+└ @ NCDatasets /home/renatob/.julia/packages/NCDatasets/PkTUf/src/netcdf_c.jl:988
+┌ Debug: nc_put_vars: [0, 0],[2, 2],[1, 1]
+└ @ NCDatasets /home/renatob/.julia/packages/NCDatasets/PkTUf/src/netcdf_c.jl:987
+┌ Debug: shape (2, 2)
+└ @ NCDatasets /home/renatob/.julia/packages/NCDatasets/PkTUf/src/netcdf_c.jl:988
+┌ Debug: closing netCDF NCDataset 65536 debug_huslia_central4_results.nc
+└ @ NCDatasets /home/renatob/.julia/packages/NCDatasets/PkTUf/src/dataset.jl:253
+┌ Debug: closing 65536
+└ @ NCDatasets /home/renatob/.julia/packages/NCDatasets/PkTUf/src/netcdf_c.jl:1242
+┌ Debug: end close 65536
+└ @ NCDatasets /home/renatob/.julia/packages/NCDatasets/PkTUf/src/netcdf_c.jl:1244
+┌ Info: ✅ NetCDF file written successfully!
+│   file = debug_huslia_central4_results.nc
+└ @ Main /net/fluo/data3/data/FluoData1/students/renato/aviris_huslia/debug_huslia_gpp.jl:285

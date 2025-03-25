@@ -6,10 +6,14 @@ using Printf
 using Statistics
 
 # ---- Optimize Worker Management ----
+@info "🔧 Cleaning up existing workers..."
 if length(workers()) > 1
     rmprocs(workers())  # Ensure clean start
 end
-addprocs(64; exeflags = "--project")  # Reduce to 16 for better efficiency
+@info "🔨 Adding parallel workers..."
+addprocs(128; exeflags = "--project")  # Reduce to 16 for better efficiency
+
+@info "✅ Workers added: $(workers())"
 
 # Load target function across all workers
 @everywhere include("target_function_v3.jl")
@@ -39,17 +43,28 @@ end
 Fits spectral shift traits from a NetCDF file, filtering out non-vegetation pixels.
 """
 function fit_shift_traits!(datafile::String, ncresult::String)
+    @info "🚀 Starting trait fitting process..."
+    @info "📂 Reading NetCDF data from: $datafile"
     # ---- Read NetCDF Data ----
     wavelengths = read_nc(Float64, datafile, "wavelength")
     reflectance = read_nc(Float64, datafile, "Reflectance")
     lat_values  = read_nc(Float64, datafile, "lat")  
-    lon_values  = read_nc(Float64, datafile, "lon")  
+    lon_values  = read_nc(Float64, datafile, "lon") 
+    
+    @info "✅ Successfully read NetCDF data!"
+    @info "Reflectance dimensions: $(size(reflectance))"
+    @info "Wavelengths: $(length(wavelengths)) bands"
 
     reflectance .= clamp.(reflectance, 0.0, 1.0)  # In-place modification
 
     # ---- Define Grid ----
-    px_range_i = 1:min(101, size(reflectance, 1))  # Ensure safe indexing
-    px_range_j = 1:min(101, size(reflectance, 2))
+    #px_range_i = 1:min(101, size(reflectance, 1))  # Ensure safe indexing
+    #px_range_j = 1:min(101, size(reflectance, 2))
+    px_range_i = 1:max(101, size(reflectance, 1))  # Ensure safe indexing
+    px_range_j = 1:max(101, size(reflectance, 2))
+
+    @info "🗺️  Processing pixel grid: $(length(px_range_i)) x $(length(px_range_j))"
+
 
     # ---- Precompute Index Mapping ----
     px_i_to_local = Dict(px => i for (i, px) in enumerate(px_range_i))
@@ -69,7 +84,10 @@ function fit_shift_traits!(datafile::String, ncresult::String)
     end
 
     # ---- Parallel Processing ----
+    @info "⚙️  Running parallel spectral fitting on valid pixels..."
+
     fittings = @showprogress pmap(fit_shift_traits, params; batch_size=50)  # Reduce batch size for better balancing
+    @info "✅ Finished parallel fitting of $(length(fittings)) pixels."
 
     # ---- Initialize Matrices ----
     trait_names = ["chl", "lai", "lma", "lwc", "cbc", "pro"]
@@ -103,6 +121,10 @@ function fit_shift_traits!(datafile::String, ncresult::String)
 end
 
 # ---- Run the Optimized Function ----
-datafile = "data/merged_output_subset.nc"
-outputfile = "data/test_output_rmse_ndvi.nc"
+datafile = "data/merged_output_subset_v4.nc"
+outputfile = "data/test_output_rmse_ndvi_v4.nc"
+#datafile = "data/merged_output_third.nc"
+#outputfile = "data/trait_file_third.nc"
 fit_shift_traits!(datafile, outputfile)
+@info "🎉 All done! Output saved to $outputfile"
+

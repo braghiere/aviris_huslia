@@ -1,0 +1,7 @@
+🟢 Starting Emerald Simulation Debugging
+
+⚙️ Configured SPAC and SAVING_DICT outputs
+📦 Loading AVIRIS batch from data/batches/batch_1_1.nc
+🔍 Trait data sizes: chl=(50, 50), lai=(50, 50), lma=(50, 50)
+✅ Loaded central 4 pixels traits
+✅ SPAC object created

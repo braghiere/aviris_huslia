@@ -1,0 +1,58 @@
+🟢 Starting Emerald Debug Simulation
+
+⚙️  Configuring SPAC and Saving Dict...
+🌎 Defining Fake Site Environmental Parameters...
+🌤️  Creating Fake Weather Driver Data...
+➕ Added column K_PLANT
+➕ Added column MOD_T_L_MAX
+➕ Added column MOD_T_L_MEAN
+➕ Added column MOD_T_L_MIN
+➕ Added column GPP
+➕ Added column ET_VEG
+➕ Added column K_ROOT_STEM
+➕ Added column CNPP
+➕ Added column MOD_T_SOIL_1
+➕ Added column MOD_T_SOIL_2
+➕ Added column MOD_T_SOIL_3
+➕ Added column MOD_T_SOIL_4
+➕ Added column MOD_P_L_MAX
+➕ Added column MOD_P_L_MEAN
+➕ Added column MOD_P_L_MIN
+➕ Added column MOD_SWC_1
+➕ Added column MOD_SWC_2
+➕ Added column MOD_SWC_3
+➕ Added column MOD_SWC_4
+➕ Added column SIF740
+🧮 Columns present in fake_weather_df: ["FDOY", "RAD", "T_AIR", "SWC_1", "PRECIP", "RAD_DIR", "RAD_DIF", "T_LEAF", "CLOUD", "LAI", "JMAX25", "RAD_LW", "CO2", "VCMAX25", "T_SOIL_3", "CI", "VPD", "SWC_2", "T_SOIL_4", "CHL", "WIND", "T_SOIL_2", "SWC_4", "T_SOIL_1", "SWC_3", "P_ATM", "K_PLANT", "MOD_T_L_MAX", "MOD_T_L_MEAN", "MOD_T_L_MIN", "GPP", "ET_VEG", "K_ROOT_STEM", "CNPP", "MOD_T_SOIL_1", "MOD_T_SOIL_2", "MOD_T_SOIL_3", "MOD_T_SOIL_4", "MOD_P_L_MAX", "MOD_P_L_MEAN", "MOD_P_L_MIN", "MOD_SWC_1", "MOD_SWC_2", "MOD_SWC_3", "MOD_SWC_4", "SIF740"]
+🔍 Initial Conditions:
+🔹 RAD_DIR: [254.76861693554991, 109.06071057744434, 68.45299848419307, 153.46448934894622, 314.4997796736974, 310.05674094459783, 189.78045718516276, 245.0419322227902, 9.113707768864348, 268.29660301864567, 159.05413810663947]
+🔹 RAD_DIF: [109.18655011523569, 46.74030453319043, 29.336999350368462, 65.77049543526266, 134.78561986015603, 132.88146040482764, 81.33448165078404, 105.01797095262438, 3.9058747580847206, 114.98425843656243, 68.16605918855977]
+🔹 VPD: [1.2, 1.2, 1.2, 1.2, 1.2, 1.2, 1.2, 1.2, 1.2, 1.2, 1.2]
+🔹 T_AIR: [287.91654706946315, 291.6976191733705, 288.0561265975487, 294.1482959869252, 290.4461865200663, 294.7090318936056, 294.89962630685693, 292.9226983011812, 289.0056652250735, 286.06128797992045, 286.7199185128933]
+🔹 SWC_1: [0.23649152450840646, 0.2638507042966843, 0.24003970062749794, 0.34585795220616133, 0.3031139921896249, 0.3787970608346013, 0.2817520407878355, 0.33332942413572964, 0.3631527095749, 0.25937986880040576, 0.27710008797045527]
+
+🚀 Running Minimal Simulation with Fake Data...
+✅ simulation! ran successfully!
+
+🔍 Checking Simulation Outputs...
+🔹 Available Columns: ["FDOY", "RAD", "T_AIR", "SWC_1", "PRECIP", "RAD_DIR", "RAD_DIF", "T_LEAF", "CLOUD", "LAI", "JMAX25", "RAD_LW", "CO2", "VCMAX25", "T_SOIL_3", "CI", "VPD", "SWC_2", "T_SOIL_4", "CHL", "WIND", "T_SOIL_2", "SWC_4", "T_SOIL_1", "SWC_3", "P_ATM", "K_PLANT", "MOD_T_L_MAX", "MOD_T_L_MEAN", "MOD_T_L_MIN", "GPP", "ET_VEG", "K_ROOT_STEM", "CNPP", "MOD_T_SOIL_1", "MOD_T_SOIL_2", "MOD_T_SOIL_3", "MOD_T_SOIL_4", "MOD_P_L_MAX", "MOD_P_L_MEAN", "MOD_P_L_MIN", "MOD_SWC_1", "MOD_SWC_2", "MOD_SWC_3", "MOD_SWC_4", "SIF740"]
+🚨 ERROR: `GPP` is missing from output!
+
+🔍 Verifying GPP Computation Per Time Step:
+📆 FDOY 190 → GPP: 11.24021425208894
+📆 FDOY 191 → GPP: 7.6822133975190505
+📆 FDOY 192 → GPP: 5.427987427062297
+📆 FDOY 193 → GPP: 9.756526589188196
+📆 FDOY 194 → GPP: 13.294265472156335
+📆 FDOY 195 → GPP: 14.344834511629356
+📆 FDOY 196 → GPP: 11.094076650977502
+📆 FDOY 197 → GPP: 12.37270785966758
+📆 FDOY 198 → GPP: 1.3043881217341076
+📆 FDOY 199 → GPP: 10.902075053898903
+📆 FDOY 200 → GPP: 8.608439015189438
+
+📦 SAVING_DICT: Dict{String, Any}("K_PLANT" => true, "ΦFΦP" => false, "ΣSIF_LEAF" => false, "MOD_T_MMM" => true, "GPP" => true, "ET_VEG" => true, "ΣSIF_CHL" => false, "SIF771" => false, "NIRvI" => false, "K_ROOT_STEM" => true, "CNPP" => true, "MOD_T_SOIL" => true, "PAR" => false, "EVI" => false, "MOD_P_MMM" => true, "MOD_SWC" => true, "NIRvR" => false, "ΣSIF" => false, "SIF740" => true, "MOD_T_LEAF" => false, "BETA" => false, "NDVI" => false, "SIF757" => false, "PPAR" => false, "SIF683" => false, "MOD_P_LEAF" => false)
+⚠️ spac_fake has no saving_dict field (might be okay depending on Emerald version)
+✅ Simulation results exported to simulation_output.csv
+
+✅ Debug Simulation Complete! Log saved to simulation_log.txt

@@ -1,213 +1,173 @@
-using NetcdfIO: append_nc!, create_nc!, read_nc
 using Distributed
 using ProgressMeter: @showprogress
 using Emerald
 using Emerald.EmeraldData.GlobalDatasets: LandDatasetLabels, grid_dict, grid_spac
 using Emerald.EmeraldData.WeatherDrivers: grid_weather_driver
-using Emerald.EmeraldLand.Namespace: SPACConfiguration, BetaFunction, BetaParameterΘ, BetaParameterG1, MedlynSM
+using Emerald.EmeraldLand.Namespace: SPACConfiguration
 using Emerald.EmeraldFrontier: simulation!, SAVING_DICT
 using Dates
-using NetCDF
-using Base.GC
+using DataFrames
+using NCDatasets
+using NetcdfIO: read_nc
 
-# Set up the number type
-FT = Float64
+# Initialize Logging
+logfile = open("detailed_simulation.log", "w")
+log(msg) = (println(msg); println(logfile, msg))
 
-# ---- Optimize Worker Management ----
-if length(workers()) > 1
-    rmprocs(workers())  # Ensure clean start
-end
-if length(workers()) == 1
-    addprocs(4; exeflags = "--project")  # Adjust number of processes if needed
-end
-
-# **🛠️ Load necessary modules on all workers**
-@everywhere using Emerald
-@everywhere using Emerald.EmeraldData.GlobalDatasets
-@everywhere using Emerald.EmeraldData.WeatherDrivers
-@everywhere using Emerald.EmeraldLand.Namespace
-@everywhere using Emerald.EmeraldFrontier: simulation!, SAVING_DICT
-
-# Ensure `linear_θ_soil` is defined on all workers
-@everywhere linear_θ_soil(x) = min(1, max(eps(), (x - 0.034) / (0.46 - 0.034)))
-
-# Define the function outside of @everywhere but ensure workers have access
-@everywhere function run_shift_simulation!(param::Vector)
-    if any(isnothing, param)
-        return NaN, NaN, NaN, NaN, NaN, NaN
-    end
-
-    config = param[1]
-    spac = deepcopy(param[2])
-    df = param[3]
-
-    # Convert DataFrame to NamedTuple
-    df_tuple = (; (Symbol(col) => collect(df[!, col]) for col in propertynames(df))...)
-
-    # **DEBUG: Check for missing fields**
-    debug_namedtuple_structure!(df_tuple)
-
-    # Ensure required variables exist as vectors
-    required_vars = [
-        :MOD_SWC_1, :MOD_SWC_2, :MOD_SWC_3, :MOD_SWC_4,
-        :MOD_T_SOIL_1, :MOD_T_SOIL_2, :MOD_T_SOIL_3, :MOD_T_SOIL_4,
-        :MOD_T_L_MAX,  # 🌟 NEWLY HANDLED FIELD
-        :F_GPP, :SIF740, :SIF683, :SIF757, :SIF771, :F_H2O
-    ]
-
-    for var in required_vars
-        if !haskey(df_tuple, var)
-            println("⚠️ Adding missing field: $var with NaN values")
-            df_tuple = merge(df_tuple, NamedTuple{(var,)}((fill(NaN, 1),)))  # Assign missing vars as Vector{Float64}
-        elseif df_tuple[var] isa Float64
-            df_tuple = merge(df_tuple, NamedTuple{(var,)}((fill(df_tuple[var], 1),)))  # Convert Float64 to vector
-        end
-    end
-
-    # Run the simulation with corrected NamedTuple
-    simulation!(config, spac, df_tuple; saving_dict=SAVING_DICT)
-
-    # Release memory
-    spac = nothing
-    GC.gc()
-
-    return df_tuple.F_GPP[1], df_tuple.SIF740[1], df_tuple.SIF683[1], df_tuple.SIF757[1], df_tuple.SIF771[1], df_tuple.F_H2O[1]
+# Initialize parallel workers
+if nworkers() == 1
+    addprocs(128; exeflags="--project")
 end
 
+@everywhere begin
+    using Emerald
+    using Emerald.EmeraldData.GlobalDatasets: LandDatasetLabels, grid_dict, grid_spac
+    using Emerald.EmeraldData.WeatherDrivers: grid_weather_driver
+    using Emerald.EmeraldLand.Namespace: SPACConfiguration
+    using Emerald.EmeraldFrontier: simulation!, SAVING_DICT
+    using Dates
+    using DataFrames
 
-
-@everywhere function debug_namedtuple_structure!(df_tuple)
-    println("🔍 Checking df_tuple structure on Worker $(myid())...")
-    println("📋 Available keys in df_tuple: ", keys(df_tuple))
-
-    # Define the required fields for the simulation
-    required_fields = [
-        :MOD_SWC_1, :MOD_SWC_2, :MOD_SWC_3, :MOD_SWC_4,  # Soil moisture levels
-        :MOD_T_SOIL_1, :MOD_T_SOIL_2, :MOD_T_SOIL_3, :MOD_T_SOIL_4,  # Soil temperatures
-        :MOD_T_L_MAX,  # 🌟 THIS IS THE NEWLY IDENTIFIED MISSING FIELD
-        :F_GPP, :SIF740, :SIF683, :SIF757, :SIF771, :F_H2O  # Model outputs
-    ]
-
-    # Check for missing fields
-    missing_fields = []
-    for field in required_fields
-        if !haskey(df_tuple, field)
-            push!(missing_fields, field)
-        end
-    end
-
-    if isempty(missing_fields)
-        println("✅ All required fields are present.")
-    else
-        println("🚨 Missing fields in df_tuple: ", missing_fields)
-    end
+    FT = Float64
+    CONFIG = SPACConfiguration(FT)
 end
 
+# Setup SAVING_DICT outputs
+for var in ["GPP", "CNPP", "MOD_SWC", "MOD_T_SOIL", "MOD_T_MMM", "MOD_P_MMM", "ET_VEG", "K_PLANT", "K_ROOT_STEM", "SIF740"]
+    SAVING_DICT[var] = true
+end
+log("✅ Initialized Configuration and SAVING_DICT")
 
+# Load AVIRIS traits
+#batch_file = "data/batches/batch_1_1.nc"
+batch_file = "data/test_output_rmse_ndvi.nc"
+log("📦 Loading AVIRIS traits from $batch_file")
+chls = read_nc(Float64, batch_file, "chl")
+lais = read_nc(Float64, batch_file, "lai")
+lmas = read_nc(Float64, batch_file, "lma")
+lat = read_nc(Float64, batch_file, "lat")
+lon = read_nc(Float64, batch_file, "lon")
 
-
-
-
-@info "Defining a configuration for the simulation..."
-CONFIG = SPACConfiguration(Float64)
-
-# Set the location for Huslia (based on AVIRIS flight region)
-huslia_lat = 65.7
-huslia_lon = -156.4
-
-@info "Reading the traits data from AVIRIS batch file..."
-batch_file = "data/batches/batch_1_1.nc"
-
-# Read new trait data from the batch file
-chls = read_nc(FT, batch_file, "chl")
-lais = read_nc(FT, batch_file, "lai")
-vcms = read_nc(FT, batch_file, "lma")
-
-# Read latitude and longitude from the batch file
-lat_values = read_nc(FT, batch_file, "lat")
-lon_values = read_nc(FT, batch_file, "lon")
-
-@info "Fetching environmental data for Huslia..."
-dict_shift = grid_dict(LandDatasetLabels("gm2", 2020), huslia_lat, huslia_lon)
-dict_shift["LONGITUDE"] = huslia_lon
+# Setup SPAC model for Huslia
+lat_huslia, lon_huslia = 65.7, -156.4
+dict_shift = grid_dict(LandDatasetLabels("gm2", 2020), lat_huslia, lon_huslia)
+dict_shift["LONGITUDE"] = lon_huslia
+dict_shift["LATITUDE"] = lat_huslia
+dict_shift["YEAR"] = 2022
 dict_shift["LMA"] = 0.01
 dict_shift["soil_color"] = 13
-dict_shift["SOIL_N"] = [1.37 for _ in 1:4]
-dict_shift["SOIL_α"] = [163.2656 for _ in 1:4]
-dict_shift["SOIL_ΘR"] = [0.034 for _ in 1:4]
-dict_shift["SOIL_ΘS"] = [0.46 for _ in 1:4]
-
-@info "Initializing SPAC model..."
 spac_shift = grid_spac(CONFIG, dict_shift)
-g1 = dict_shift["G1_MEDLYN_C3"]
-bt = BetaFunction{Float64}(FUNC = linear_θ_soil, PARAM_X = BetaParameterΘ(), PARAM_Y = BetaParameterG1())
+log("✅ SPAC model initialized")
 
-for leaf in spac_shift.plant.leaves
-    leaf.flux.trait.stomatal_model = MedlynSM{Float64}(G0 = 0.005, G1 = g1, β = bt)
+# Load and Prepare Weather Data
+weather_df = grid_weather_driver("wd1", dict_shift)
+weather_df.PRECIP .= 0
+aviris_date = "2022-07-13T19:05:01.000000"
+aviris_date_noon = "2022-07-13T12:00:00.000000"
+day_of_year = Dates.dayofyear(DateTime(aviris_date, dateformat"yyyy-mm-ddTHH:MM:SS.ssssss"))
+#n = findfirst(weather_df.FDOY .> day_of_year .&& weather_df.RAD .> 300)
+#onehour_df = weather_df[n:n, :]
+
+
+# Filter weather data for the correct day
+day_indices = findall(floor.(Int, weather_df.FDOY) .== day_of_year)
+
+if isempty(day_indices)
+    error("🚨 No weather data found for day of year: $day_of_year")
 end
 
-@info "Reading weather data for Huslia..."
-dict_shift["YEAR"] = 2022
-wdrv_shift = grid_weather_driver("wd1", dict_shift)
-wdrv_shift.PRECIP .= 0
+# Now, explicitly select the timestamp closest to solar noon (maximum RAD)
+noon_idx_relative = argmax(weather_df.RAD[day_indices])
+n = day_indices[noon_idx_relative]
 
-"""
-    run_one_timestep!(day::Int, chls::Matrix, lais::Matrix, vcms::Matrix)
-Runs the photosynthesis and SIF simulation for a given day using input traits.
-"""
-function run_one_timestep!(day::Int, chls::Matrix, lais::Matrix, vcms::Matrix)
-    @assert size(chls) == size(lais) == size(vcms) "Mismatch in input sizes!"
+# Extract your one-hour dataframe at solar noon
+onehour_df = weather_df[n:n, :]
 
-    n = findfirst(wdrv_shift.FDOY .> day .&& wdrv_shift.RAD .> 1)
-    oneday_df = wdrv_shift[n:n+23,:]
-    _, m = findmax(oneday_df.RAD)
-    onehour_df = oneday_df[m:m,:]
+#println("🌞 Selected solar noon conditions for FDOY=$(weather_df.FDOY[n]):")
+#println("   - RAD=$(weather_df.RAD[n]) W/m²")
+#println("   - T_AIR=$(weather_df.T_AIR[n]) K")
+#println("   - VPD=$(weather_df.VPD[n]/1000) kPa (converted)")
 
-    params = []
-    for i in eachindex(chls)
-        if any(isnan, (chls[i], lais[i], vcms[i]))
-            push!(params, [nothing, nothing, nothing])
+# Convert VPD from Pa to kPa
+onehour_df.VPD .= onehour_df.VPD ./ 1000
+
+# Prepare required MOD_ fields
+for (key, save) in SAVING_DICT
+    if save
+        if key == "MOD_SWC"
+            for i in 1:length(spac_shift.soils)
+                onehour_df[!, Symbol("MOD_SWC_$i")] .= NaN
+            end
+        elseif key == "MOD_T_SOIL"
+            for i in 1:length(spac_shift.soils)
+                onehour_df[!, Symbol("MOD_T_SOIL_$i")] .= NaN
+            end
+        elseif key == "MOD_T_MMM"
+            for label in ["MOD_T_L_MAX", "MOD_T_L_MEAN", "MOD_T_L_MIN"]
+                onehour_df[!, Symbol(label)] .= NaN
+            end
+        elseif key == "MOD_P_MMM"
+            for label in ["MOD_P_L_MAX", "MOD_P_L_MEAN", "MOD_P_L_MIN"]
+                onehour_df[!, Symbol(label)] .= NaN
+            end
         else
-            df = deepcopy(onehour_df)
-            df.CHLOROPHYLL .= chls[i]
-            df.car .= chls[i] / 7.0
-            df.LAI .= lais[i]
-            df.VCMAX25 .= 1.30 * chls[i] .+ 3.72
-            df.JMAX25 .= 2.49 * chls[i] .+ 10.80
-            df.LMA .= vcms[i]
-
-            param = [CONFIG, spac_shift, df]
-            push!(params, param)
+            col = Symbol(key)
+            if !(col in names(onehour_df))
+                onehour_df[!, col] .= NaN
+            end
         end
     end
-
-    # Use `pmap` for parallel execution
-    results = @showprogress pmap(run_shift_simulation!, params)
-
-    gpps = [r[1] for r in results]
-    sifs740 = [r[2] for r in results]
-    sifs683 = [r[3] for r in results]
-    sifs757 = [r[4] for r in results]
-    sifs771 = [r[5] for r in results]
-    transps = [r[6] for r in results]
-
-    GC.gc()
-
-    return reshape(gpps, size(chls,1), size(chls,2)), 
-           reshape(sifs740, size(chls,1), size(chls,2)), 
-           reshape(sifs683, size(chls,1), size(chls,2)), 
-           reshape(sifs757, size(chls,1), size(chls,2)), 
-           reshape(sifs771, size(chls,1), size(chls,2)), 
-           reshape(transps, size(chls,1), size(chls,2))
 end
 
-@info "Running the simulation..."
+@everywhere spac_shift = $spac_shift
+@everywhere onehour_df = $onehour_df
 
-# **Select the AVIRIS Flight Date**
-aviris_date = "2022-07-13T19:05:01.000000"
-day_of_year = Dates.dayofyear(Dates.DateTime(aviris_date, "yyyy-mm-ddTHH:MM:SS.ssssss"))
-@info "Processing data for AVIRIS flight day (DOY: $day_of_year)..."
+@everywhere function run_pixel_simulation(chl, lai, lma, lat, lon)
+    if isnan(chl) || isnan(lai) || isnan(lma)
+        @info "❌ Skipping NaN traits at (lat=$(lat), lon=$(lon))"
+        return NaN
+    end
 
-gpps, sifs740, sifs683, sifs757, sifs771, transps = run_one_timestep!(day_of_year, chls, lais, vcms)
+    df = deepcopy(onehour_df)
+    df.CHLOROPHYLL .= chl
+    df.car .= chl / 7.0
+    df.LAI .= lai
+    df.VCMAX25 .= 1.30 * chl + 3.72
+    df.JMAX25 .= 2.49 * chl + 10.80
+    df.LMA .= lma
 
-@info "Results for Huslia (AVIRIS flight day) saved successfully!"
+    df_tuple = NamedTuple{Tuple(Symbol.(names(df)))}(Tuple([df[:, n] for n in names(df)]))
+
+    try
+        simulation!(CONFIG, deepcopy(spac_shift), df_tuple; saving_dict=SAVING_DICT)
+        gpp = df_tuple.GPP[1]
+        @info "✅ Pixel(lat=$(lat), lon=$(lon)): chl=$(chl), lai=$(lai), vcm=$(lma), GPP=$(gpp)"
+        @info "🌍 ENV Vars: RAD=$(df.RAD[1]), T_AIR=$(df.T_AIR[1]), SWC=$(df.SWC_1[1]), VPD=$(df.VPD[1]), CO2=$(df.CO2[1]), LAI=$(lai)"
+        return gpp
+    catch e
+        @warn "Simulation error at (lat=$(lat), lon=$(lon)): $e"
+        return NaN
+    end
+end
+
+log("🚀 Running simulations in parallel...")
+params = [(chls[i], lais[i], lmas[i], lat[i[1]], lon[i[2]]) for i in CartesianIndices(chls)]
+gpp_results = @showprogress pmap(x -> run_pixel_simulation(x...), params)
+
+gpp_matrix = permutedims(reshape(gpp_results, size(chls)), (2, 1))
+
+# Save Results
+NCDataset("data/gpp_test_output_rmse_ndvi.nc.nc", "c") do ds
+    defDim(ds, "lon", length(lon))
+    defDim(ds, "lat", length(lat))
+
+    defVar(ds, "lon", FT, ("lon",))[:] = lon
+    defVar(ds, "lat", FT, ("lat",))[:] = lat
+    defVar(ds, "GPP", FT, ("lon", "lat"))[:, :] = gpp_matrix
+
+    ds["GPP"].attrib["units"] = "gC.m-2.day-1"
+    ds["GPP"].attrib["long_name"] = "Gross Primary Production"
+end
+
+log("✅ Results saved")
+close(logfile)
